@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karthik C M | Co-Founder & Developer Portfolio</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter & Space Grotesk -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#fff1f2',
+                            100: '#ffe4e6',
+                            500: '#e11d48', /* Deep Rose / Red accent to match EETIRP branding */
+                            600: '#be123c',
+                            700: '#9f1239',
+                            900: '#4c0519',
+                        },
+                        corporate: {
+                            indigo: '#6366f1',
+                            amber: '#f59e0b',
+                            slate: '#0f172a'
+                        }
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'glow': 'glow 3s ease-in-out infinite alternate',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-12px)' },
+                        },
+                        glow: {
+                            '0%': { boxShadow: '0 0 15px rgba(225, 29, 72, 0.2)' },
+                            '100%': { boxShadow: '0 0 35px rgba(225, 29, 72, 0.6)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #090d16;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #e11d48;
+        }
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glow-hover:hover {
+            box-shadow: 0 0 25px rgba(225, 29, 72, 0.35);
+            border-color: rgba(225, 29, 72, 0.5);
+        }
+        .text-gradient-red {
+            background: linear-gradient(135deg, #ffffff 30%, #f43f5e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .text-gradient-gold {
+            background: linear-gradient(135deg, #f59e0b 0%, #e11d48 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-[#030712] text-slate-100 font-sans antialiased overflow-x-hidden">
+
+    <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-rose-900/10 rounded-full blur-[140px] pointer-events-none"></div>
+    <div class="absolute top-1/3 right-1/4 w-[600px] h-[600px] bg-indigo-900/10 rounded-full blur-[160px] pointer-events-none"></div>
+    <div class="absolute bottom-10 left-10 w-[450px] h-[450px] bg-rose-950/20 rounded-full blur-[130px] pointer-events-none"></div>
+
+    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 glass-panel border-b border-slate-900/85">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <a href="#hero" class="flex items-center space-x-2.5 group">
+                <div class="w-10 h-10 bg-gradient-to-tr from-rose-600 to-amber-500 rounded-xl flex items-center justify-center font-display font-bold text-white text-xl shadow-lg group-hover:scale-105 transition-transform duration-300">
+                    K
+                </div>
+                <span class="font-display font-bold text-lg tracking-wide bg-gradient-to-r from-white via-slate-100 to-slate-300 bg-clip-text text-transparent">
+                    Karthik C M
+                </span>
+            </a>
+            
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex space-x-8 text-sm font-medium text-slate-400">
+                <a href="#hero" class="hover:text-rose-400 transition-colors duration-200">Home</a>
+                <a href="#about" class="hover:text-rose-400 transition-colors duration-200">About</a>
+                <a href="#skills" class="hover:text-rose-400 transition-colors duration-200">Skills</a>
+                <a href="#projects" class="hover:text-rose-400 transition-colors duration-200">Projects</a>
+                <a href="#certifications" class="hover:text-rose-400 transition-colors duration-200">Certifications</a>
+                <a href="#contact" class="hover:text-rose-400 transition-colors duration-200">Contact</a>
+            </nav>
+
+            <!-- Actions -->
+            <div class="flex items-center space-x-4">
+                <a href="mailto:Achark659@gmail.com" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-xs font-bold text-white bg-gradient-to-r from-rose-600 to-rose-700 hover:from-rose-500 hover:to-rose-600 rounded-xl transition-all shadow-md shadow-rose-600/20">
+                    <i class="fa-regular fa-envelope"></i> Let's Connect
+                </a>
+                <button id="mobile-menu-btn" class="md:hidden text-slate-400 hover:text-white focus:outline-none p-1">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-slate-900 bg-slate-950/95 px-4 py-4 space-y-3">
+            <a href="#hero" class="block py-2 text-slate-400 hover:text-white transition-colors">Home</a>
+            <a href="#about" class="block py-2 text-slate-400 hover:text-white transition-colors">About</a>
+            <a href="#skills" class="block py-2 text-slate-400 hover:text-white transition-colors">Skills</a>
+            <a href="#projects" class="block py-2 text-slate-400 hover:text-white transition-colors">Projects</a>
+            <a href="#certifications" class="block py-2 text-slate-400 hover:text-white transition-colors">Certifications</a>
+            <a href="#contact" class="block py-2 text-slate-400 hover:text-white transition-colors">Contact</a>
+            <a href="mailto:Achark659@gmail.com" class="block text-center py-2.5 bg-gradient-to-r from-rose-600 to-rose-700 text-white rounded-xl font-medium text-sm">
+                Email Me
+            </a>
+        </div>
+    </header>
+
+    <section id="hero" class="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Left Info -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass-panel border border-rose-500/30 text-xs text-rose-300 font-semibold uppercase tracking-wider animate-float">
+                        <span class="w-2.5 h-2.5 bg-emerald-400 rounded-full animate-ping"></span>
+                        Executive Co-Founder
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl font-display font-extrabold tracking-tight text-white leading-tight">
+                        Hi, I'm <span class="bg-gradient-to-r from-white via-rose-300 to-rose-500 bg-clip-text text-transparent">Karthik C M</span>
+                    </h1>
+                    
+                    <h2 class="text-xl sm:text-2xl font-semibold text-slate-300 flex flex-wrap justify-center lg:justify-start items-center gap-2">
+                        <span>Creative Developer &</span>
+                        <span class="text-gradient-gold font-bold border-b-2 border-rose-500/30 pb-0.5">
+                            Co-Founder of EETRIP PVT LTD
+                        </span>
+                    </h2>
+
+                    <p class="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Computer Science and Engineering student & tech entrepreneur focused on building intelligent AI platforms, mobile ecosystems, and responsive digital products. High academic drive (CGPA: 8.95) matched with executive building experience.
+                    </p>
+
+                    <!-- Professional Links & Info -->
+                    <div class="flex flex-wrap justify-center lg:justify-start gap-3 pt-2">
+                        <a href="https://linkedin.com/in/karthik-achar-87358930" target="_blank" class="flex items-center gap-2 px-4 py-2.5 bg-slate-900/85 hover:bg-slate-800 rounded-xl text-sm text-slate-300 border border-slate-800 transition-all hover:border-rose-500/50">
+                            <i class="fa-brands fa-linkedin text-rose-400"></i> LinkedIn
+                        </a>
+                        <a href="https://github.com/karthikachar56" target="_blank" class="flex items-center gap-2 px-4 py-2.5 bg-slate-900/85 hover:bg-slate-800 rounded-xl text-sm text-slate-300 border border-slate-800 transition-all hover:border-rose-500/50">
+                            <i class="fa-brands fa-github text-rose-400"></i> GitHub
+                        </a>
+                        <a href="mailto:Achark659@gmail.com" class="flex items-center gap-2 px-4 py-2.5 bg-slate-900/85 hover:bg-slate-800 rounded-xl text-sm text-slate-300 border border-slate-800 transition-all hover:border-rose-500/50">
+                            <i class="fa-regular fa-envelope text-rose-400"></i> Email
+                        </a>
+                        <a href="tel:+917411490271" class="flex items-center gap-2 px-4 py-2.5 bg-slate-900/85 hover:bg-slate-800 rounded-xl text-sm text-slate-300 border border-slate-800 transition-all hover:border-rose-500/50">
+                            <i class="fa-solid fa-phone text-emerald-400"></i> +91 7411490271
+                        </a>
+                    </div>
+
+                    <!-- EETRIP Highlight Banner inside hero -->
+                    <div class="p-4 rounded-2xl glass-panel border border-rose-500/20 shadow-md flex items-center gap-4 max-w-xl mx-auto lg:mx-0 text-left mt-6">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-rose-500 to-amber-600 flex items-center justify-center text-white text-xl font-bold shadow-lg shadow-rose-500/20">
+                            <i class="fa-solid fa-rocket"></i>
+                        </div>
+                        <div>
+                            <div class="text-xs font-semibold text-rose-400 tracking-wider uppercase">Startup Venture</div>
+                            <h3 class="text-sm font-bold text-white">EETRIP PVT LTD</h3>
+                            <p class="text-xs text-slate-400 mt-0.5">Pioneering smart tech and travel ecosystems. Directing product strategy & tech architectures.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Right (Profile Card referencing profile.jpeg) -->
+                <div class="lg:col-span-5 flex flex-col items-center justify-center">
+                    <div class="relative group">
+                        <!-- Neon Glowing Rings -->
+                        <div class="absolute inset-0 bg-gradient-to-tr from-rose-600 via-rose-500 to-amber-500 rounded-2xl blur-xl opacity-40 group-hover:opacity-60 transition duration-500"></div>
+                        
+                        <!-- Main Card -->
+                        <div class="relative w-80 h-96 sm:w-96 sm:h-[480px] rounded-2xl overflow-hidden bg-slate-900 border border-slate-800/80 p-3 transition duration-500 hover:scale-[1.02]">
+                            <!-- Outer glow boundary -->
+                            <div class="relative w-full h-full rounded-xl overflow-hidden bg-slate-950 group/img">
+                                <!-- Target Photo: profile.jpeg -->
+                                <img id="avatar-image" 
+                                     src="profile.jpeg" 
+                                     alt="Karthik C M" 
+                                     class="w-full h-full object-cover" 
+                                     onerror="this.style.display='none'; document.getElementById('avatar-fallback').classList.remove('hidden');">
+
+                                <!-- Fallback gradient and details (Shown if the physical image file is missing/not loaded) -->
+                                <div id="avatar-fallback" class="hidden absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-slate-950 to-rose-950 p-6 text-center">
+                                    <div class="w-20 h-20 rounded-full bg-rose-500/10 flex items-center justify-center border border-rose-500/20 mb-4 text-rose-400 text-3xl">
+                                        <i class="fa-regular fa-user"></i>
+                                    </div>
+                                    <h4 class="text-base font-semibold text-white">Karthik C M</h4>
+                                    <p class="text-xs text-slate-400 mt-2 max-w-[240px]">
+                                        Co-Founder of EETRIP PVT LTD <br>B.Tech CSE Student
+                                    </p>
+                                </div>
+
+                                <!-- Glassmorphic Bottom Bar with name -->
+                                <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black via-black/90 to-transparent z-10">
+                                    <p class="text-[10px] text-rose-400 uppercase tracking-widest font-semibold">Co-Founder & Director</p>
+                                    <h3 class="text-lg font-bold text-white">Karthik C M</h3>
+                                    <p class="text-xs text-slate-300">Bengaluru, India</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About & Stats Section -->
+    <section id="about" class="py-20 glass-panel border-y border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Info Left -->
+                <div class="lg:col-span-5 space-y-6">
+                    <h3 class="text-xs font-bold uppercase text-rose-400 tracking-widest">Professional Summary</h3>
+                    <h2 class="text-3xl font-display font-extrabold text-white">Driven by Innovation, Powered by AI</h2>
+                    <p class="text-slate-400 leading-relaxed text-sm sm:text-base">
+                        I am a highly results-oriented and detail-focused Computer Science and Engineering student. My academic background coupled with real-world co-founder experiences has fueled my journey in modern frontend frameworks, cloud databases, AI APIs, and product leadership.
+                    </p>
+                    
+                    <!-- Stats Grid -->
+                    <div class="grid grid-cols-2 gap-4 pt-4">
+                        <div class="p-4 bg-slate-900/60 rounded-xl border border-slate-800">
+                            <div class="text-3xl font-display font-bold text-rose-400">8.95</div>
+                            <div class="text-xs text-slate-400 mt-1 uppercase tracking-wide">B.Tech CGPA</div>
+                        </div>
+                        <div class="p-4 bg-slate-900/60 rounded-xl border border-slate-800">
+                            <div class="text-3xl font-display font-bold text-amber-400">Co-Founder</div>
+                            <div class="text-xs text-slate-400 mt-1 uppercase tracking-wide">EETRIP PVT LTD</div>
+                        </div>
+                        <div class="p-4 bg-slate-900/60 rounded-xl border border-slate-800">
+                            <div class="text-3xl font-display font-bold text-rose-400">2+</div>
+                            <div class="text-xs text-slate-400 mt-1 uppercase tracking-wide">AI Platforms Built</div>
+                        </div>
+                        <div class="p-4 bg-slate-900/60 rounded-xl border border-slate-800">
+                            <div class="text-3xl font-display font-bold text-emerald-400">3+</div>
+                            <div class="text-xs text-slate-400 mt-1 uppercase tracking-wide">Professional Certs</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education & Leadership Timeline Right -->
+                <div class="lg:col-span-7 space-y-8">
+                    <div>
+                        <h3 class="text-xs font-bold uppercase text-rose-400 tracking-widest mb-6">Education & Leadership Journey</h3>
+                        <div class="space-y-6 relative border-l-2 border-slate-800 pl-6 ml-3">
+                            
+                            <!-- Timeline Item 1 -->
+                            <div class="relative">
+                                <span class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-rose-500 ring-4 ring-slate-950"></span>
+                                <div class="p-4 rounded-xl bg-slate-900/40 border border-slate-800/80 hover:border-rose-500/30 transition duration-300">
+                                    <div class="flex justify-between items-start flex-wrap gap-2">
+                                        <span class="px-2.5 py-1 rounded bg-rose-500/10 text-rose-400 text-[10px] font-bold uppercase">Executive Leadership</span>
+                                        <span class="text-xs text-slate-400">Present</span>
+                                    </div>
+                                    <h4 class="text-base font-bold text-white mt-2">Co-Founder & Director</h4>
+                                    <p class="text-sm text-rose-300">EETRIP PVT LTD</p>
+                                    <p class="text-xs text-slate-400 mt-2">
+                                        Co-directing strategic objectives, technological solutions, software system designs, and user ecosystem integrations for dynamic modern travel environments.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Timeline Item 2 -->
+                            <div class="relative">
+                                <span class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-indigo-500 ring-4 ring-slate-950"></span>
+                                <div class="p-4 rounded-xl bg-slate-900/40 border border-slate-800/80 hover:border-indigo-500/30 transition duration-300">
+                                    <div class="flex justify-between items-start flex-wrap gap-2">
+                                        <span class="px-2.5 py-1 rounded bg-indigo-500/10 text-indigo-400 text-[10px] font-bold uppercase">B.Tech Degree</span>
+                                        <span class="text-xs text-slate-400">August 2025 - Present</span>
+                                    </div>
+                                    <h4 class="text-base font-bold text-white mt-2">Computer Science & Engineering</h4>
+                                    <p class="text-sm text-indigo-300">Sapthagiri NPS University, Bengaluru</p>
+                                    <div class="flex items-center gap-4 mt-2">
+                                        <span class="text-xs text-slate-400">CGPA: <strong class="text-white">8.95</strong></span>
+                                        <span class="text-xs text-slate-500">|</span>
+                                        <span class="text-xs text-emerald-400 font-semibold">Active Pursuing</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-3 mb-12">
+                <h3 class="text-xs font-bold uppercase text-rose-400 tracking-widest">Expertise Area</h3>
+                <h2 class="text-3xl sm:text-4xl font-display font-extrabold text-white">Technical Arsenal</h2>
+                <p class="text-slate-400 max-w-xl mx-auto text-sm">
+                    A comprehensive suite of languages, technologies, and methodologies developed to address real-world engineering challenges.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Category 1: Languages -->
+                <div class="p-6 rounded-2xl bg-slate-900/40 border border-slate-800/80 glow-hover transition-all duration-300 space-y-4">
+                    <div class="w-10 h-10 rounded-lg bg-rose-500/10 flex items-center justify-center text-rose-400 text-lg">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Programming Languages</h3>
+                    <ul class="space-y-2.5">
+                        <li class="flex items-center justify-between text-sm text-slate-400">
+                            <span>Python</span>
+                            <span class="text-xs text-rose-400 font-semibold">Advanced</span>
+                        </li>
+                        <li class="flex items-center justify-between text-sm text-slate-400">
+                            <span>C Programming</span>
+                            <span class="text-xs text-rose-400 font-semibold">Intermediate</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Category 2: Platforms & Hosting -->
+                <div class="p-6 rounded-2xl bg-slate-900/40 border border-slate-800/80 glow-hover transition-all duration-300 space-y-4">
+                    <div class="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-400 text-lg">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Hosting & Distribution</h3>
+                    <ul class="space-y-2.5">
+                        <li class="flex items-center justify-between text-sm text-slate-400">
+                            <span>Play Store</span>
+                            <span class="text-xs text-amber-400 font-semibold">App Deploy</span>
+                        </li>
+                        <li class="flex items-center justify-between text-sm text-slate-400">
+                            <span>App Store</span>
+                            <span class="text-xs text-amber-400 font-semibold">iOS Distribution</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Category 3: Tools & IDEs -->
+                <div class="p-6 rounded-2xl bg-slate-900/40 border border-slate-800/80 glow-hover transition-all duration-300 space-y-4">
+                    <div class="w-10 h-10 rounded-lg bg-rose-500/10 flex items-center justify-center text-rose-400 text-lg">
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Tools & Platforms</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-2 text-sm text-slate-400">
+                            <i class="fa-solid fa-circle-check text-rose-500 text-[10px]"></i> Antigravity / Windsurf
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-slate-400">
+                            <i class="fa-solid fa-circle-check text-rose-500 text-[10px]"></i> VS Code & Git/GitHub
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-slate-400">
+                            <i class="fa-solid fa-circle-check text-rose-500 text-[10px]"></i> Microsoft Office suite
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Category 4: Methodologies -->
+                <div class="p-6 rounded-2xl bg-slate-900/40 border border-slate-800/80 glow-hover transition-all duration-300 space-y-4">
+                    <div class="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400 text-lg">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Core Methodologies</h3>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="text-xs px-2.5 py-1 rounded-md bg-slate-800 text-slate-300">Data Structures</span>
+                        <span class="text-xs px-2.5 py-1 rounded-md bg-slate-800 text-slate-300">Algorithms</span>
+                        <span class="text-xs px-2.5 py-1 rounded-md bg-slate-800 text-slate-300">RESTful APIs</span>
+                        <span class="text-xs px-2.5 py-1 rounded-md bg-slate-800 text-slate-300">UI/UX Design</span>
+                        <span class="text-xs px-2.5 py-1 rounded-md bg-slate-800 text-slate-300">AI Productivity</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 glass-panel border-y border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-3 mb-12">
+                <h3 class="text-xs font-bold uppercase text-rose-400 tracking-widest">My Work</h3>
+                <h2 class="text-3xl sm:text-4xl font-display font-extrabold text-white">Featured Ecosystems</h2>
+                <p class="text-slate-400 max-w-xl mx-auto text-sm">
+                    A closer look at key AI products and platforms designed to serve students, professionals, and global deployment architectures.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- Project 1: Placement AI -->
+                <div class="group rounded-2xl bg-slate-900 border border-slate-800 overflow-hidden hover:border-rose-500/50 transition-all duration-300">
+                    <div class="h-48 bg-gradient-to-tr from-rose-950 via-slate-900 to-rose-900 flex items-center justify-center relative overflow-hidden p-6 border-b border-slate-800">
+                        <!-- Tech badges inside image box -->
+                        <div class="absolute top-4 left-4 flex gap-2">
+                            <span class="px-2 py-1 text-[10px] font-bold tracking-widest bg-rose-500 text-white rounded uppercase">AI & Mobile</span>
+                        </div>
+                        <div class="text-center space-y-2 z-10">
+                            <i class="fa-solid fa-wand-magic-sparkles text-4xl text-rose-400 group-hover:scale-110 transition duration-350"></i>
+                            <h4 class="text-lg font-display font-bold text-white mt-2">Placement AI Platform</h4>
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-xl font-bold text-white">AI-Powered Career Prep System</h3>
+                            <span class="text-xs text-slate-500 font-medium">B.Tech Project</span>
+                        </div>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            A smart, web-sourced infrastructure built to guide engineering and technical students through real-time career placement prep simulations, using state-of-the-art conversational AI pipelines.
+                        </p>
+                        <div class="pt-2">
+                            <div class="text-xs font-semibold text-slate-300 mb-2">Primary Toolset:</div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2.5 py-1 rounded bg-slate-850 text-xs text-rose-300 border border-slate-800">Antigravity</span>
+                                <span class="px-2.5 py-1 rounded bg-slate-850 text-xs text-rose-300 border border-slate-800">Windsurf</span>
+                                <span class="px-2.5 py-1 rounded bg-slate-850 text-xs text-rose-300 border border-slate-800">VS Code</span>
+                                <span class="px-2.5 py-1 rounded bg-slate-850 text-xs text-rose-300 border border-slate-800">API Integration</span>
+                            </div>
+                        </div>
+                        <div class="border-t border-slate-800 pt-4 mt-2">
+                            <h4 class="text-xs font-semibold text-slate-300 mb-2"><i class="fa-solid fa-list-check text-rose-400 mr-1.5"></i> Key Capabilities:</h4>
+                            <ul class="text-xs text-slate-400 space-y-2">
+                                <li class="flex items-center gap-2">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-rose-400"></span>
+                                    Web source conversion to optimized Android & iOS platform code.
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-rose-400"></span>
+                                    Direct integration and cloud compilation to hosting builds (Play/App Store).
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: KAURA -->
+                <div class="group rounded-2xl bg-slate-900 border border-slate-800 overflow-hidden hover:border-rose-500/50 transition-all duration-300">
+                    <div class="h-48 bg-gradient-to-tr from-rose-950 via-slate-900 to-amber-950/70 flex items-center justify-center relative overflow-hidden p-6 border-b border-slate-800">
+                        <div class="absolute top-4 left-4 flex gap-2">
+                            <span class="px-2 py-1 text-[10px] font-bold tracking-widest bg-amber-500 text-slate-950 rounded uppercase">Ecosystem</span>
+                        </div>
+                        <div class="text-center space-y-2 z-10">
+                            <i class="fa-solid fa-network-wired text-4xl text-amber-400 group-hover:scale-110 transition duration-350"></i>
+                            <h4 class="text-lg font-display font-bold text-white mt-2">KAURA Platform</h4>
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-xl font-bold text-white">Student Digital Ecosystem Platform</h3>
+                            <span class="text-xs text-slate-500 font-medium">B.Tech Project</span>
+                        </div>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            An all-inclusive student ecosystem connecting academic resources, digital identities, and information grids directly to modern interfaces. Crafted for seamless multi-platform interaction.
+                        </p>
+                        <div class="pt-2">
+                            <div class="text-xs font-semibold text-slate-300 mb-2">Primary Toolset:</div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2.5 py-1 rounded bg-slate-850 text-xs text-rose-300 border border-slate-800">Antigravity</span>
+                                <span class="px-2.5 py-1 rounded bg-slate-850 text-xs text-rose-300 border border-slate-800">Windsurf</span>
+                                <span class="px-2.5 py-1 rounded bg-slate-850 text-xs text-rose-300 border border-slate-800">VS Code</span>
+                                <span class="px-2.5 py-1 rounded bg-slate-850 text-xs text-rose-300 border border-slate-800">Web Scraping</span>
+                            </div>
+                        </div>
+                        <div class="border-t border-slate-800 pt-4 mt-2">
+                            <h4 class="text-xs font-semibold text-slate-300 mb-2"><i class="fa-solid fa-list-check text-amber-400 mr-1.5"></i> Key Capabilities:</h4>
+                            <ul class="text-xs text-slate-400 space-y-2 mb-5">
+                                <li class="flex items-center gap-2">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+                                    Web-scraping and data collection engines for real-time localized information.
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+                                    Targeted mobile application builds deployed via structured source codes.
+                                </li>
+                            </ul>
+
+                            <div class="pt-4 border-t border-slate-800/60 flex items-center justify-between">
+                                <a href="https://www.kaurahub.com/" target="_blank" class="inline-flex items-center gap-2 px-4 py-2.5 text-xs font-bold text-white bg-gradient-to-r from-rose-600 to-amber-500 hover:from-rose-500 hover:to-amber-400 rounded-xl transition-all shadow-md shadow-rose-600/10 group-hover:scale-[1.02]">
+                                    <i class="fa-solid fa-globe"></i> Visit kaurahub.com <i class="fa-solid fa-arrow-up-right-from-square text-[9px] opacity-80 animate-pulse"></i>
+                                </a>
+                                <span class="text-[10px] text-emerald-400 flex items-center gap-1.5 font-semibold bg-emerald-500/10 px-2.5 py-1 rounded-full border border-emerald-500/20">
+                                    <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-ping"></span> Live Platform
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-3 mb-12">
+                <h3 class="text-xs font-bold uppercase text-rose-400 tracking-widest">Achievements</h3>
+                <h2 class="text-3xl sm:text-4xl font-display font-extrabold text-white">Professional Credentials</h2>
+                <p class="text-slate-400 max-w-xl mx-auto text-sm">
+                    Verified certificates proving specialization in modern programming environments, data tools, and generative AI processes.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <!-- Certificate 1: Python -->
+                <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-rose-500/40 hover:bg-slate-900 transition duration-300 flex flex-col justify-between h-full">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-rose-500/10 flex items-center justify-center text-rose-400 text-xl">
+                            <i class="fa-brands fa-python"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white">Python Programming Specialist</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Deep dive into core syntactical architecture, object-oriented concepts, structural paradigms, and localized automated script development.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-slate-800/80 mt-4 flex items-center justify-between text-[11px] text-rose-300">
+                        <span class="font-bold uppercase tracking-widest font-display">Developer Certified</span>
+                        <i class="fa-solid fa-award text-sm"></i>
+                    </div>
+                </div>
+
+                <!-- Certificate 2: Office Specialist -->
+                <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-amber-500/40 hover:bg-slate-900 transition duration-300 flex flex-col justify-between h-full">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-400 text-xl">
+                            <i class="fa-regular fa-file-excel"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white">Microsoft Office Specialist</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Professional certification focusing on advanced spreadsheet compilation (Excel), complex data modeling, formatting pipelines, and corporate documents (Word).
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-slate-800/80 mt-4 flex items-center justify-between text-[11px] text-amber-400">
+                        <span class="font-bold uppercase tracking-widest font-display">Analytical Certified</span>
+                        <i class="fa-solid fa-shield-halved text-sm"></i>
+                    </div>
+                </div>
+
+                <!-- Certificate 3: Digital Productivity with AI -->
+                <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-rose-500/40 hover:bg-slate-900 transition duration-300 flex flex-col justify-between h-full">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-rose-500/10 flex items-center justify-center text-rose-400 text-xl">
+                            <i class="fa-solid fa-robot"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white">Digital Productivity with AI</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Advanced methodologies in deploying and prompting generative AI model architectures to radically optimize engineering workflows, script creations, and workspace automations.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-slate-800/80 mt-4 flex items-center justify-between text-[11px] text-rose-400">
+                        <span class="font-bold uppercase tracking-widest font-display">Next-Gen Workflow</span>
+                        <i class="fa-solid fa-wand-magic-sparkles text-sm"></i>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Footer Section -->
+    <section id="contact" class="py-20 glass-panel border-t border-slate-900 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Left Details -->
+                <div class="lg:col-span-5 space-y-6">
+                    <h3 class="text-xs font-bold uppercase text-rose-400 tracking-widest">Get In Touch</h3>
+                    <h2 class="text-3xl sm:text-4xl font-display font-extrabold text-white">Let's build something exceptional</h2>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Whether you are looking for a software developer intern, interested in discussing co-founding solutions under EETRIP PVT LTD, or want to collaborate on AI-driven systems, my inbox is open!
+                    </p>
+
+                    <div class="space-y-4 pt-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-rose-500/10 flex items-center justify-center text-rose-400">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500 uppercase tracking-widest font-semibold">Direct Call</p>
+                                <a href="tel:+917411490271" class="text-sm font-bold text-white hover:text-rose-400 transition">+91 7411490271</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-rose-500/10 flex items-center justify-center text-rose-400">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500 uppercase tracking-widest font-semibold">Official Email</p>
+                                <a href="mailto:Achark659@gmail.com" class="text-sm font-bold text-white hover:text-rose-400 transition">Achark659@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-rose-500/10 flex items-center justify-center text-rose-400">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500 uppercase tracking-widest font-semibold">Base Location</p>
+                                <p class="text-sm font-bold text-white">Chikkabanavara, Bengaluru - 560090</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Form Box -->
+                <div class="lg:col-span-7 bg-slate-950/80 p-6 sm:p-8 rounded-2xl border border-slate-800">
+                    <form id="contact-form" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wide mb-1.5">Your Name</label>
+                                <input type="text" required placeholder="John Doe" class="w-full bg-slate-900 border border-slate-850 focus:border-rose-500/50 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none transition">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wide mb-1.5">Your Email</label>
+                                <input type="email" required placeholder="john@company.com" class="w-full bg-slate-900 border border-slate-850 focus:border-rose-500/50 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none transition">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wide mb-1.5">Subject</label>
+                            <input type="text" required placeholder="Co-founder inquiry / Freelance / Job" class="w-full bg-slate-900 border border-slate-850 focus:border-rose-500/50 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wide mb-1.5">Detailed Message</label>
+                            <textarea rows="4" required placeholder="Hi Karthik, I would love to talk about your AI products..." class="w-full bg-slate-900 border border-slate-850 focus:border-rose-500/50 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none transition resize-none"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full py-3 bg-gradient-to-r from-rose-600 to-rose-700 hover:from-rose-500 hover:to-rose-600 text-white rounded-xl text-sm font-bold shadow-lg shadow-rose-600/15 hover:shadow-rose-600/30 transition duration-300">
+                            Send Secure Message
+                        </button>
+                    </form>
+                    
+                    <!-- Notification alert placeholder -->
+                    <div id="toast-message" class="hidden mt-4 p-3 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs rounded-lg flex items-center gap-2">
+                        <i class="fa-regular fa-circle-check"></i>
+                        <span>Thanks for reaching out! Karthik will get back to you shortly.</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="border-t border-slate-900 mt-16 pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+                <p>&copy; 2026 Karthik C M. All rights reserved.</p>
+                <p>Designed with corporate branding systems & developer workflows.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Interactive Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Contact Form Submission Action (Prevent page reload, show beautiful success toast)
+        const contactForm = document.getElementById('contact-form');
+        const toastMessage = document.getElementById('toast-message');
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            toastMessage.classList.remove('hidden');
+            contactForm.reset();
+            setTimeout(() => {
+                toastMessage.classList.add('hidden');
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
