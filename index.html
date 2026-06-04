@@ -609,87 +609,59 @@
     <!-- Contact & Footer Section -->
     <section id="contact" class="py-20 glass-panel border-t border-slate-900 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+            
+            <!-- Contact Header -->
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <h3 class="text-xs font-bold uppercase text-rose-400 tracking-widest">Get In Touch</h3>
+                <h2 class="text-3xl sm:text-4xl font-display font-extrabold text-white">Let's build something exceptional</h2>
+                <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+                    Whether you are looking for a software developer intern, interested in discussing co-founding solutions under EETIRP PVT LTD, or want to collaborate on AI-driven systems, feel free to reach out directly through any of the channels below.
+                </p>
+            </div>
+
+            <!-- 3-Column Premium Contact Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 
-                <!-- Left Details -->
-                <div class="lg:col-span-5 space-y-6">
-                    <h3 class="text-xs font-bold uppercase text-rose-400 tracking-widest">Get In Touch</h3>
-                    <h2 class="text-3xl sm:text-4xl font-display font-extrabold text-white">Let's build something exceptional</h2>
-                    <p class="text-slate-400 text-sm leading-relaxed">
-                        Whether you are looking for a software developer intern, interested in discussing co-founding solutions under EETIRP PVT LTD, or want to collaborate on AI-driven systems, my inbox is open!
-                    </p>
-
-                    <div class="space-y-4 pt-4">
-                        <div class="flex items-center gap-4">
-                            <div class="w-10 h-10 rounded-xl bg-rose-500/10 flex items-center justify-center text-rose-400">
-                                <i class="fa-solid fa-phone"></i>
-                            </div>
-                            <div>
-                                <p class="text-xs text-slate-500 uppercase tracking-widest font-semibold">Direct Call</p>
-                                <a href="tel:+917411490271" class="text-sm font-bold text-white hover:text-rose-400 transition">+91 7411490271</a>
-                            </div>
-                        </div>
-
-                        <div class="flex items-center gap-4">
-                            <div class="w-10 h-10 rounded-xl bg-rose-500/10 flex items-center justify-center text-rose-400">
-                                <i class="fa-solid fa-envelope"></i>
-                            </div>
-                            <div>
-                                <p class="text-xs text-slate-500 uppercase tracking-widest font-semibold">Official Email</p>
-                                <a href="mailto:Achark659@gmail.com" class="text-sm font-bold text-white hover:text-rose-400 transition">Achark659@gmail.com</a>
-                            </div>
-                        </div>
-
-                        <div class="flex items-center gap-4">
-                            <div class="w-10 h-10 rounded-xl bg-rose-500/10 flex items-center justify-center text-rose-400">
-                                <i class="fa-solid fa-location-dot"></i>
-                            </div>
-                            <div>
-                                <p class="text-xs text-slate-500 uppercase tracking-widest font-semibold">Base Location</p>
-                                <p class="text-sm font-bold text-white">Chikkabanavara, Bengaluru - 560090</p>
-                            </div>
-                        </div>
+                <!-- Card 1: Direct Call -->
+                <a href="tel:+917411490271" class="group p-8 rounded-2xl bg-slate-950/50 border border-slate-850 hover:border-rose-500/30 hover:bg-slate-900/40 transition-all duration-300 flex flex-col items-center text-center space-y-4">
+                    <div class="w-14 h-14 rounded-xl bg-rose-500/10 flex items-center justify-center text-rose-400 text-2xl group-hover:scale-110 transition duration-300">
+                        <i class="fa-solid fa-phone"></i>
                     </div>
-                </div>
-
-                <!-- Right Form Box -->
-                <div class="lg:col-span-7 bg-slate-950/80 p-6 sm:p-8 rounded-2xl border border-slate-800">
-                    <form id="contact-form" class="space-y-4">
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wide mb-1.5">Your Name</label>
-                                <input type="text" required placeholder="John Doe" class="w-full bg-slate-900 border border-slate-850 focus:border-rose-500/50 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none transition">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wide mb-1.5">Your Email</label>
-                                <input type="email" required placeholder="john@company.com" class="w-full bg-slate-900 border border-slate-850 focus:border-rose-500/50 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none transition">
-                            </div>
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wide mb-1.5">Subject</label>
-                            <input type="text" required placeholder="Co-founder inquiry / Freelance / Job" class="w-full bg-slate-900 border border-slate-850 focus:border-rose-500/50 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none transition">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wide mb-1.5">Detailed Message</label>
-                            <textarea rows="4" required placeholder="Hi Karthik, I would love to talk about your AI products..." class="w-full bg-slate-900 border border-slate-850 focus:border-rose-500/50 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none transition resize-none"></textarea>
-                        </div>
-                        
-                        <button type="submit" class="w-full py-3 bg-gradient-to-r from-rose-600 to-rose-700 hover:from-rose-500 hover:to-rose-600 text-white rounded-xl text-sm font-bold shadow-lg shadow-rose-600/15 hover:shadow-rose-600/30 transition duration-300">
-                            Send Secure Message
-                        </button>
-                    </form>
-                    
-                    <!-- Notification alert placeholder -->
-                    <div id="toast-message" class="hidden mt-4 p-3 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs rounded-lg flex items-center gap-2">
-                        <i class="fa-regular fa-circle-check"></i>
-                        <span>Thanks for reaching out! Karthik will get back to you shortly.</span>
+                    <div class="space-y-1">
+                        <p class="text-xs text-slate-500 uppercase tracking-widest font-semibold">Direct Call</p>
+                        <h4 class="text-base font-bold text-white group-hover:text-rose-400 transition">+91 7411490271</h4>
                     </div>
+                    <p class="text-xs text-slate-400">Available for calls, project briefings, and dynamic startup discussions.</p>
+                </a>
+
+                <!-- Card 2: Official Email -->
+                <a href="mailto:Achark659@gmail.com" class="group p-8 rounded-2xl bg-slate-950/50 border border-slate-850 hover:border-rose-500/30 hover:bg-slate-900/40 transition-all duration-300 flex flex-col items-center text-center space-y-4">
+                    <div class="w-14 h-14 rounded-xl bg-rose-500/10 flex items-center justify-center text-rose-400 text-2xl group-hover:scale-110 transition duration-300">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div class="space-y-1">
+                        <p class="text-xs text-slate-500 uppercase tracking-widest font-semibold">Official Email</p>
+                        <h4 class="text-base font-bold text-white group-hover:text-rose-400 transition">Achark659@gmail.com</h4>
+                    </div>
+                    <p class="text-xs text-slate-400">Reach out for business inquiries, developer recruitment, and corporate proposals.</p>
+                </a>
+
+                <!-- Card 3: Base Location -->
+                <div class="p-8 rounded-2xl bg-slate-950/50 border border-slate-850 flex flex-col items-center text-center space-y-4">
+                    <div class="w-14 h-14 rounded-xl bg-rose-500/10 flex items-center justify-center text-rose-400 text-2xl">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div class="space-y-1">
+                        <p class="text-xs text-slate-500 uppercase tracking-widest font-semibold">Base Location</p>
+                        <h4 class="text-base font-bold text-white">Bengaluru, India</h4>
+                    </div>
+                    <p class="text-xs text-slate-400">Chikkabanavara, Bengaluru - 560090. Open to remote & local hybrid ecosystems.</p>
                 </div>
 
             </div>
 
             <!-- Footer Bottom -->
-            <div class="border-t border-slate-900 mt-16 pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+            <div class="border-t border-slate-900 mt-20 pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-slate-500 gap-4">
                 <p>&copy; 2026 Karthik C M. All rights reserved.</p>
                 <p>Designed with corporate branding systems & developer workflows.</p>
             </div>
@@ -703,19 +675,6 @@
 
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
-        });
-
-        // Contact Form Submission Action (Prevent page reload, show beautiful success toast)
-        const contactForm = document.getElementById('contact-form');
-        const toastMessage = document.getElementById('toast-message');
-
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            toastMessage.classList.remove('hidden');
-            contactForm.reset();
-            setTimeout(() => {
-                toastMessage.classList.add('hidden');
-            }, 5000);
         });
     </script>
 </body>
