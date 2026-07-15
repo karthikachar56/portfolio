@@ -64,62 +64,99 @@
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #090d16;
+            background: #f8fafc;
         }
         ::-webkit-scrollbar-thumb {
-            background: #1e293b;
+            background: #cbd5e1;
             border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
             background: #e11d48;
         }
         .glass-panel {
-            background: rgba(15, 23, 42, 0.7);
+            background: rgba(255, 255, 255, 0.75);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+        }
+        .glow-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .glow-hover:hover {
-            box-shadow: 0 0 25px rgba(225, 29, 72, 0.35);
-            border-color: rgba(225, 29, 72, 0.5);
+            box-shadow: 0 10px 30px -10px rgba(225, 29, 72, 0.12);
+            border-color: rgba(225, 29, 72, 0.3);
+            transform: translateY(-4px);
         }
         .text-gradient-red {
-            background: linear-gradient(135deg, #ffffff 30%, #f43f5e 100%);
+            background: linear-gradient(135deg, #0f172a 30%, #e11d48 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         .text-gradient-gold {
-            background: linear-gradient(135deg, #f59e0b 0%, #e11d48 100%);
+            background: linear-gradient(135deg, #e11d48 0%, #f59e0b 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+        /* Underline hover animation */
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #e11d48;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        /* Bento Card Styles */
+        .bento-card {
+            background: #ffffff;
+            border: 1px solid rgba(15, 23, 42, 0.08);
+            border-radius: 1.5rem; /* rounded-3xl */
+            padding: 1.5rem; /* p-6 */
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02), 0 4px 12px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .bento-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px -10px rgba(15, 23, 42, 0.08), 0 4px 12px rgba(0, 0, 0, 0.02);
+            border-color: rgba(225, 29, 72, 0.25);
+        }
     </style>
 </head>
-<body class="bg-[#030712] text-slate-100 font-sans antialiased overflow-x-hidden">
+<body class="bg-[#f8fafc] text-slate-800 font-sans antialiased overflow-x-hidden">
 
-    <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-rose-900/10 rounded-full blur-[140px] pointer-events-none"></div>
-    <div class="absolute top-1/3 right-1/4 w-[600px] h-[600px] bg-indigo-900/10 rounded-full blur-[160px] pointer-events-none"></div>
-    <div class="absolute bottom-10 left-10 w-[450px] h-[450px] bg-rose-950/20 rounded-full blur-[130px] pointer-events-none"></div>
+    <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-rose-100/30 rounded-full blur-[140px] pointer-events-none"></div>
+    <div class="absolute top-1/3 right-1/4 w-[600px] h-[600px] bg-indigo-100/30 rounded-full blur-[160px] pointer-events-none"></div>
+    <div class="absolute bottom-10 left-10 w-[450px] h-[450px] bg-slate-100/60 rounded-full blur-[130px] pointer-events-none"></div>
 
-    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 glass-panel border-b border-slate-900/85">
+    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 glass-panel border-b border-slate-200/80 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <a href="#hero" class="flex items-center space-x-2.5 group">
-                <div class="w-10 h-10 bg-gradient-to-tr from-rose-600 to-amber-500 rounded-xl flex items-center justify-center font-display font-bold text-white text-xl shadow-lg group-hover:scale-105 transition-transform duration-300">
+                <div class="w-10 h-10 bg-gradient-to-tr from-rose-600 to-amber-500 rounded-xl flex items-center justify-center font-display font-bold text-white text-xl shadow-md group-hover:scale-105 transition-transform duration-300">
                     K
                 </div>
-                <span class="font-display font-bold text-lg tracking-wide bg-gradient-to-r from-white via-slate-100 to-slate-300 bg-clip-text text-transparent">
+                <span class="font-display font-bold text-lg tracking-wide bg-gradient-to-r from-slate-900 via-slate-800 to-slate-700 bg-clip-text text-transparent">
                     Karthik C M
                 </span>
             </a>
             
             <!-- Desktop Nav -->
-            <nav class="hidden md:flex space-x-8 text-sm font-medium text-slate-400">
-                <a href="#hero" class="hover:text-rose-400 transition-colors duration-200">Home</a>
-                <a href="#about" class="hover:text-rose-400 transition-colors duration-200">About</a>
-                <a href="#skills" class="hover:text-rose-400 transition-colors duration-200">Skills</a>
-                <a href="#projects" class="hover:text-rose-400 transition-colors duration-200">Projects</a>
-                <a href="#certifications" class="hover:text-rose-400 transition-colors duration-200">Certifications</a>
-                <a href="#contact" class="hover:text-rose-400 transition-colors duration-200">Contact</a>
+            <nav class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
+                <a href="#hero" class="hover:text-rose-600 transition-colors duration-200 nav-link">Home</a>
+                <a href="#about" class="hover:text-rose-600 transition-colors duration-200 nav-link">About</a>
+                <a href="#skills" class="hover:text-rose-600 transition-colors duration-200 nav-link">Skills</a>
+                <a href="#projects" class="hover:text-rose-600 transition-colors duration-200 nav-link">Projects</a>
+                <a href="#certifications" class="hover:text-rose-600 transition-colors duration-200 nav-link">Certifications</a>
+                <a href="#contact" class="hover:text-rose-600 transition-colors duration-200 nav-link">Contact</a>
             </nav>
 
             <!-- Actions -->
@@ -127,118 +164,146 @@
                 <a href="mailto:Achark659@gmail.com" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-xs font-bold text-white bg-gradient-to-r from-rose-600 to-rose-700 hover:from-rose-500 hover:to-rose-600 rounded-xl transition-all shadow-md shadow-rose-600/20">
                     <i class="fa-regular fa-envelope"></i> Let's Connect
                 </a>
-                <button id="mobile-menu-btn" class="md:hidden text-slate-400 hover:text-white focus:outline-none p-1">
+                <button id="mobile-menu-btn" class="md:hidden text-slate-500 hover:text-slate-900 focus:outline-none p-1">
                     <i class="fa-solid fa-bars text-xl"></i>
                 </button>
             </div>
         </div>
 
         <!-- Mobile Menu (Hidden by default) -->
-        <div id="mobile-menu" class="hidden md:hidden border-t border-slate-900 bg-slate-950/95 px-4 py-4 space-y-3">
-            <a href="#hero" class="block py-2 text-slate-400 hover:text-white transition-colors">Home</a>
-            <a href="#about" class="block py-2 text-slate-400 hover:text-white transition-colors">About</a>
-            <a href="#skills" class="block py-2 text-slate-400 hover:text-white transition-colors">Skills</a>
-            <a href="#projects" class="block py-2 text-slate-400 hover:text-white transition-colors">Projects</a>
-            <a href="#certifications" class="block py-2 text-slate-400 hover:text-white transition-colors">Certifications</a>
-            <a href="#contact" class="block py-2 text-slate-400 hover:text-white transition-colors">Contact</a>
+        <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 bg-white/95 px-4 py-4 space-y-3 shadow-md">
+            <a href="#hero" class="block py-2 text-slate-600 hover:text-rose-600 transition-colors">Home</a>
+            <a href="#about" class="block py-2 text-slate-600 hover:text-rose-600 transition-colors">About</a>
+            <a href="#skills" class="block py-2 text-slate-600 hover:text-rose-600 transition-colors">Skills</a>
+            <a href="#projects" class="block py-2 text-slate-600 hover:text-rose-600 transition-colors">Projects</a>
+            <a href="#certifications" class="block py-2 text-slate-600 hover:text-rose-600 transition-colors">Certifications</a>
+            <a href="#contact" class="block py-2 text-slate-600 hover:text-rose-600 transition-colors">Contact</a>
             <a href="mailto:Achark659@gmail.com" class="block text-center py-2.5 bg-gradient-to-r from-rose-600 to-rose-700 text-white rounded-xl font-medium text-sm">
                 Email Me
             </a>
         </div>
     </header>
 
-    <section id="hero" class="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
+    <section id="hero" class="relative pt-28 pb-12 overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <!-- Hero Bento Grid: 3 columns on large screens -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <!-- Hero Left Info -->
-                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass-panel border border-rose-500/30 text-xs text-rose-300 font-semibold uppercase tracking-wider animate-float">
-                        <span class="w-2.5 h-2.5 bg-emerald-400 rounded-full animate-ping"></span>
-                        Executive Co-Founder
-                    </div>
-                    
-                    <h1 class="text-4xl sm:text-5xl md:text-6xl font-display font-extrabold tracking-tight text-white leading-tight">
-                        Hi, I'm <span class="bg-gradient-to-r from-white via-rose-300 to-rose-500 bg-clip-text text-transparent">Karthik C M</span>
-                    </h1>
-                    
-                    <h2 class="text-xl sm:text-2xl font-semibold text-slate-300 flex flex-wrap justify-center lg:justify-start items-center gap-2">
-                        <span>Creative Developer &</span>
-                        <span class="text-gradient-gold font-bold border-b-2 border-rose-500/30 pb-0.5">
-                            Co-Founder of EETIRP PVT LTD
-                        </span>
-                    </h2>
-
-                    <p class="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                        Computer Science and Engineering student & tech entrepreneur focused on building intelligent AI platforms, mobile ecosystems, and responsive digital products. High academic drive (CGPA: 8.95) matched with executive building experience.
-                    </p>
-
-                    <!-- Professional Links & Info -->
-                    <div class="flex flex-wrap justify-center lg:justify-start gap-3 pt-2">
-                        <a href="https://linkedin.com/in/karthik-achar-87358930" target="_blank" class="flex items-center gap-2 px-4 py-2.5 bg-slate-900/85 hover:bg-slate-800 rounded-xl text-sm text-slate-300 border border-slate-800 transition-all hover:border-rose-500/50">
-                            <i class="fa-brands fa-linkedin text-rose-400"></i> LinkedIn
-                        </a>
-                        <a href="https://github.com/karthikachar56" target="_blank" class="flex items-center gap-2 px-4 py-2.5 bg-slate-900/85 hover:bg-slate-800 rounded-xl text-sm text-slate-300 border border-slate-800 transition-all hover:border-rose-500/50">
-                            <i class="fa-brands fa-github text-rose-400"></i> GitHub
-                        </a>
-                        <a href="mailto:Achark659@gmail.com" class="flex items-center gap-2 px-4 py-2.5 bg-slate-900/85 hover:bg-slate-800 rounded-xl text-sm text-slate-300 border border-slate-800 transition-all hover:border-rose-500/50">
-                            <i class="fa-regular fa-envelope text-rose-400"></i> Email
-                        </a>
-                        <a href="tel:+917411490271" class="flex items-center gap-2 px-4 py-2.5 bg-slate-900/85 hover:bg-slate-800 rounded-xl text-sm text-slate-300 border border-slate-800 transition-all hover:border-rose-500/50">
-                            <i class="fa-solid fa-phone text-emerald-400"></i> +91 7411490271
-                        </a>
-                    </div>
-
-                    <!-- EETIRP Highlight Banner inside hero -->
-                    <div class="p-4 rounded-2xl glass-panel border border-rose-500/20 shadow-md flex items-center gap-4 max-w-xl mx-auto lg:mx-0 text-left mt-6">
-                        <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-rose-500 to-amber-600 flex items-center justify-center text-white text-xl font-bold shadow-lg shadow-rose-500/20">
-                            <i class="fa-solid fa-rocket"></i>
+                <!-- 1. Bio Box (Spans 2 cols, tall) -->
+                <div class="md:col-span-2 bento-card p-8 flex flex-col justify-between space-y-6">
+                    <div class="space-y-4">
+                        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-rose-50 border border-rose-200 text-xs text-rose-700 font-semibold uppercase tracking-wider">
+                            <span class="w-2.5 h-2.5 bg-emerald-500 rounded-full animate-ping"></span>
+                            Executive Co-Founder
                         </div>
-                        <div>
-                            <div class="text-xs font-semibold text-rose-400 tracking-wider uppercase">Startup Venture</div>
-                            <h3 class="text-sm font-bold text-white">EETIRP PVT LTD</h3>
-                            <p class="text-xs text-slate-400 mt-0.5">Pioneering smart tech and travel ecosystems. Directing product strategy & tech architectures.</p>
+                        
+                        <h1 class="text-4xl sm:text-5xl font-display font-extrabold tracking-tight text-slate-900 leading-tight">
+                            Hi, I'm <span class="bg-gradient-to-r from-slate-900 via-slate-800 to-rose-600 bg-clip-text text-transparent">Karthik C M</span>
+                        </h1>
+                        
+                        <h2 class="text-lg sm:text-xl font-semibold text-slate-700">
+                            Creative Developer & <span class="text-gradient-gold font-bold">Co-Founder of EETIRP PVT LTD</span>
+                        </h2>
+
+                        <p class="text-base text-slate-600 leading-relaxed">
+                            Computer Science and Engineering student & tech entrepreneur focused on building intelligent AI platforms, mobile ecosystems, and responsive digital products. High academic drive (CGPA: 8.95) matched with executive building experience.
+                        </p>
+                    </div>
+
+                    <!-- Small signature footer inside bio box -->
+                    <div class="border-t border-slate-100 pt-4 flex items-center justify-between text-xs text-slate-500">
+                        <span>Based in Bengaluru, India</span>
+                        <span>CS & Eng Student (Sapthagiri NPS University)</span>
+                    </div>
+                </div>
+
+                <!-- 2. Profile Card Box (Spans 1 col, tall) -->
+                <div class="md:col-span-1 bento-card p-3 flex flex-col justify-between">
+                    <div class="relative w-full h-[320px] rounded-2xl overflow-hidden bg-slate-50 group/img">
+                        <!-- Target Photo: profile.jpeg -->
+                        <img id="avatar-image" 
+                             src="profile.jpeg" 
+                             alt="Karthik C M" 
+                             class="w-full h-full object-cover" 
+                             onerror="this.style.display='none'; document.getElementById('avatar-fallback').classList.remove('hidden');">
+
+                        <!-- Fallback gradient and details (Shown if the physical image file is missing/not loaded) -->
+                        <div id="avatar-fallback" class="hidden absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-slate-100 to-rose-50 p-6 text-center">
+                            <div class="w-20 h-20 rounded-full bg-rose-500/10 flex items-center justify-center border border-rose-200 mb-4 text-rose-500 text-3xl">
+                                <i class="fa-regular fa-user"></i>
+                            </div>
+                            <h4 class="text-base font-semibold text-slate-900">Karthik C M</h4>
+                            <p class="text-xs text-slate-600 mt-2 max-w-[240px]">
+                                Co-Founder of EETIRP PVT LTD <br>B.Tech CSE Student
+                            </p>
+                        </div>
+
+                        <!-- Bottom Bar with name overlay -->
+                        <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-slate-950 via-slate-900/80 to-transparent z-10">
+                            <p class="text-[10px] text-rose-400 uppercase tracking-widest font-semibold">Co-Founder & Director</p>
+                            <h3 class="text-base font-bold text-white">Karthik C M</h3>
+                            <p class="text-xs text-slate-300">Bengaluru, India</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Hero Right (Profile Card referencing profile.jpeg) -->
-                <div class="lg:col-span-5 flex flex-col items-center justify-center">
-                    <div class="relative group">
-                        <!-- Neon Glowing Rings -->
-                        <div class="absolute inset-0 bg-gradient-to-tr from-rose-600 via-rose-500 to-amber-500 rounded-2xl blur-xl opacity-40 group-hover:opacity-60 transition duration-500"></div>
-                        
-                        <!-- Main Card -->
-                        <div class="relative w-80 h-96 sm:w-96 sm:h-[480px] rounded-2xl overflow-hidden bg-slate-900 border border-slate-800/80 p-3 transition duration-500 hover:scale-[1.02]">
-                            <!-- Outer glow boundary -->
-                            <div class="relative w-full h-full rounded-xl overflow-hidden bg-slate-950 group/img">
-                                <!-- Target Photo: profile.jpeg -->
-                                <img id="avatar-image" 
-                                     src="profile.jpeg" 
-                                     alt="Karthik C M" 
-                                     class="w-full h-full object-cover" 
-                                     onerror="this.style.display='none'; document.getElementById('avatar-fallback').classList.remove('hidden');">
-
-                                <!-- Fallback gradient and details (Shown if the physical image file is missing/not loaded) -->
-                                <div id="avatar-fallback" class="hidden absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-slate-950 to-rose-950 p-6 text-center">
-                                    <div class="w-20 h-20 rounded-full bg-rose-500/10 flex items-center justify-center border border-rose-500/20 mb-4 text-rose-400 text-3xl">
-                                        <i class="fa-regular fa-user"></i>
-                                    </div>
-                                    <h4 class="text-base font-semibold text-white">Karthik C M</h4>
-                                    <p class="text-xs text-slate-400 mt-2 max-w-[240px]">
-                                        Co-Founder of EETIRP PVT LTD <br>B.Tech CSE Student
-                                    </p>
-                                </div>
-
-                                <!-- Glassmorphic Bottom Bar with name -->
-                                <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black via-black/90 to-transparent z-10">
-                                    <p class="text-[10px] text-rose-400 uppercase tracking-widest font-semibold">Co-Founder & Director</p>
-                                    <h3 class="text-lg font-bold text-white">Karthik C M</h3>
-                                    <p class="text-xs text-slate-300">Bengaluru, India</p>
-                                </div>
-                            </div>
+                <!-- 3. Startup Spotlight Box (Spans 1 col) -->
+                <div class="bento-card p-6 flex flex-col justify-between space-y-4">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-rose-500 to-amber-600 flex items-center justify-center text-white text-xl font-bold shadow-lg shadow-rose-500/20">
+                            <i class="fa-solid fa-rocket"></i>
+                        </div>
+                        <div>
+                            <div class="text-[10px] font-semibold text-rose-600 tracking-wider uppercase">Startup Venture</div>
+                            <h3 class="text-base font-bold text-slate-900">EETIRP PVT LTD</h3>
                         </div>
                     </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Pioneering smart tech and travel ecosystems. Directing product strategy & tech architectures.
+                    </p>
+                    <a href="#projects" class="text-xs font-bold text-rose-600 hover:text-rose-700 flex items-center gap-1.5 group-hover:translate-x-1 transition-transform">
+                        Explore Venture Projects <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- 4. Quick Stats Bento (Spans 1 col) -->
+                <div class="bento-card p-6 flex flex-col justify-between space-y-4">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-sm font-bold text-slate-900">Quick Metrics</h3>
+                        <span class="px-2 py-0.5 text-[9px] font-bold text-emerald-700 bg-emerald-50 rounded-md border border-emerald-100 uppercase tracking-wider">Active</span>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-100">
+                            <div class="text-lg font-bold text-rose-600">8.95</div>
+                            <div class="text-[9px] text-slate-500">B.Tech CGPA</div>
+                        </div>
+                        <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-100">
+                            <div class="text-lg font-bold text-indigo-600">2+</div>
+                            <div class="text-[9px] text-slate-500">AI Platforms</div>
+                        </div>
+                    </div>
+                    <p class="text-[10px] text-slate-500 leading-tight">
+                        Combining high academic drive with active software startup execution.
+                    </p>
+                </div>
+
+                <!-- 5. Connect / Quick Links Box (Spans 1 col) -->
+                <div class="bento-card p-6 flex flex-col justify-between space-y-4">
+                    <h3 class="text-sm font-bold text-slate-900">Get In Touch</h3>
+                    <div class="grid grid-cols-2 gap-2">
+                        <a href="https://linkedin.com/in/karthik-achar-87358930" target="_blank" class="flex items-center gap-1.5 p-2 bg-slate-50 hover:bg-rose-50/20 rounded-xl text-xs text-slate-700 border border-slate-100 transition-colors">
+                            <i class="fa-brands fa-linkedin text-rose-500"></i> LinkedIn
+                        </a>
+                        <a href="https://github.com/karthikachar56" target="_blank" class="flex items-center gap-1.5 p-2 bg-slate-50 hover:bg-rose-50/20 rounded-xl text-xs text-slate-700 border border-slate-100 transition-colors">
+                            <i class="fa-brands fa-github text-rose-500"></i> GitHub
+                        </a>
+                        <a href="mailto:Achark659@gmail.com" class="flex items-center gap-1.5 p-2 bg-slate-50 hover:bg-rose-50/20 rounded-xl text-xs text-slate-700 border border-slate-100 transition-colors col-span-2">
+                            <i class="fa-regular fa-envelope text-rose-500"></i> Achark659@gmail.com
+                        </a>
+                    </div>
+                    <a href="tel:+917411490271" class="text-xs font-bold text-slate-700 flex items-center gap-1.5">
+                        <i class="fa-solid fa-phone text-emerald-500"></i> +91 7411490271
+                    </a>
                 </div>
 
             </div>
@@ -246,80 +311,85 @@
     </section>
 
     <!-- About & Stats Section -->
-    <section id="about" class="py-20 glass-panel border-y border-slate-900">
+    <section id="about" class="py-20 bg-slate-50 border-y border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+            <!-- Bento layout: 3 columns -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <!-- Info Left -->
-                <div class="lg:col-span-5 space-y-6">
-                    <h3 class="text-xs font-bold uppercase text-rose-400 tracking-widest">Professional Summary</h3>
-                    <h2 class="text-3xl font-display font-extrabold text-white">Driven by Innovation, Powered by AI</h2>
-                    <p class="text-slate-400 leading-relaxed text-sm sm:text-base">
-                        I am a highly results-oriented and detail-focused Computer Science and Engineering student. My academic background coupled with real-world co-founder experiences has fueled my journey in modern frontend frameworks, cloud databases, AI APIs, and product leadership.
-                    </p>
-                    
-                    <!-- Stats Grid -->
-                    <div class="grid grid-cols-2 gap-4 pt-4">
-                        <div class="p-4 bg-slate-900/60 rounded-xl border border-slate-800">
-                            <div class="text-3xl font-display font-bold text-rose-400">8.95</div>
-                            <div class="text-xs text-slate-400 mt-1 uppercase tracking-wide">B.Tech CGPA</div>
+                <!-- 1. Summary Card (spans 2 cols) -->
+                <div class="md:col-span-2 bento-card p-8 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <h3 class="text-xs font-bold uppercase text-rose-600 tracking-widest">Professional Summary</h3>
+                        <h2 class="text-3xl font-display font-extrabold text-slate-900">Driven by Innovation, Powered by AI</h2>
+                        <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+                            I am a highly results-oriented and detail-focused Computer Science and Engineering student. My academic background coupled with real-world co-founder experiences has fueled my journey in modern frontend frameworks, cloud databases, AI APIs, and product leadership.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-slate-100 flex items-center gap-2 text-xs text-slate-500">
+                        <span class="w-2.5 h-2.5 rounded-full bg-rose-500"></span> Focused on scalable architectures & student tools.
+                    </div>
+                </div>
+
+                <!-- 2. Stats Grid Card (spans 1 col) -->
+                <div class="bento-card p-6 flex flex-col justify-between space-y-6">
+                    <h3 class="text-xs font-bold uppercase text-rose-600 tracking-widest">Quick Achievements</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="space-y-1">
+                            <div class="text-2xl font-bold text-rose-600 font-display">8.95</div>
+                            <div class="text-[9px] uppercase tracking-wider text-slate-500 font-semibold">B.Tech CGPA</div>
                         </div>
-                        <div class="p-4 bg-slate-900/60 rounded-xl border border-slate-800">
-                            <div class="text-3xl font-display font-bold text-amber-400">Co-Founder</div>
-                            <div class="text-xs text-slate-400 mt-1 uppercase tracking-wide">EETIRP PVT LTD</div>
+                        <div class="space-y-1">
+                            <div class="text-2xl font-bold text-amber-600 font-display">Director</div>
+                            <div class="text-[9px] uppercase tracking-wider text-slate-500 font-semibold">EETIRP</div>
                         </div>
-                        <div class="p-4 bg-slate-900/60 rounded-xl border border-slate-800">
-                            <div class="text-3xl font-display font-bold text-rose-400">2+</div>
-                            <div class="text-xs text-slate-400 mt-1 uppercase tracking-wide">AI Platforms Built</div>
+                        <div class="space-y-1">
+                            <div class="text-2xl font-bold text-rose-600 font-display">2+</div>
+                            <div class="text-[9px] uppercase tracking-wider text-slate-500 font-semibold">AI Platforms</div>
                         </div>
-                        <div class="p-4 bg-slate-900/60 rounded-xl border border-slate-800">
-                            <div class="text-3xl font-display font-bold text-emerald-400">3+</div>
-                            <div class="text-xs text-slate-400 mt-1 uppercase tracking-wide">Professional Certs</div>
+                        <div class="space-y-1">
+                            <div class="text-2xl font-bold text-emerald-600 font-display">3+</div>
+                            <div class="text-[9px] uppercase tracking-wider text-slate-500 font-semibold">Certs Held</div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Education & Leadership Timeline Right -->
-                <div class="lg:col-span-7 space-y-8">
-                    <div>
-                        <h3 class="text-xs font-bold uppercase text-rose-400 tracking-widest mb-6">Education & Leadership Journey</h3>
-                        <div class="space-y-6 relative border-l-2 border-slate-800 pl-6 ml-3">
-                            
-                            <!-- Timeline Item 1 -->
-                            <div class="relative">
-                                <span class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-rose-500 ring-4 ring-slate-950"></span>
-                                <div class="p-4 rounded-xl bg-slate-900/40 border border-slate-800/80 hover:border-rose-500/30 transition duration-300">
-                                    <div class="flex justify-between items-start flex-wrap gap-2">
-                                        <span class="px-2.5 py-1 rounded bg-rose-500/10 text-rose-400 text-[10px] font-bold uppercase">Executive Leadership</span>
-                                        <span class="text-xs text-slate-400">Present</span>
-                                    </div>
-                                    <h4 class="text-base font-bold text-white mt-2">Co-Founder & Director</h4>
-                                    <p class="text-sm text-rose-300">EETIRP PVT LTD</p>
-                                    <p class="text-xs text-slate-400 mt-2">
-                                        Co-directing strategic objectives, technological solutions, software system designs, and user ecosystem integrations for dynamic modern travel environments.
-                                    </p>
+                <!-- 3. Timeline / Journey Box (Spans all 3 cols, side-by-side timeline cells) -->
+                <div class="md:col-span-3 bento-card p-8 space-y-6">
+                    <h3 class="text-xs font-bold uppercase text-rose-600 tracking-widest">Education & Leadership Journey</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 relative">
+                        <!-- Connecting horizontal visual line on desktop -->
+                        <div class="hidden md:block absolute top-1/2 left-4 right-4 h-0.5 bg-slate-100 -translate-y-1/2 -z-10"></div>
+                        
+                        <!-- Timeline Card 1 -->
+                        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 flex flex-col justify-between space-y-4 hover:border-rose-500/20 transition-all duration-300">
+                            <div>
+                                <div class="flex justify-between items-center gap-2">
+                                    <span class="px-2.5 py-1 rounded-md bg-rose-50 text-rose-700 text-[10px] font-bold uppercase">Executive Leadership</span>
+                                    <span class="text-xs text-slate-500">Present</span>
                                 </div>
+                                <h4 class="text-lg font-bold text-slate-900 mt-3">Co-Founder & Director</h4>
+                                <p class="text-xs text-rose-600 font-medium">EETIRP PVT LTD</p>
+                                <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                                    Co-directing strategic objectives, technological solutions, software system designs, and user ecosystem integrations for dynamic modern travel environments.
+                                </p>
                             </div>
-
-                            <!-- Timeline Item 2 -->
-                            <div class="relative">
-                                <span class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-indigo-500 ring-4 ring-slate-950"></span>
-                                <div class="p-4 rounded-xl bg-slate-900/40 border border-slate-800/80 hover:border-indigo-500/30 transition duration-300">
-                                    <div class="flex justify-between items-start flex-wrap gap-2">
-                                        <span class="px-2.5 py-1 rounded bg-indigo-500/10 text-indigo-400 text-[10px] font-bold uppercase">B.Tech Degree</span>
-                                        <span class="text-xs text-slate-400">August 2025 - Present</span>
-                                    </div>
-                                    <h4 class="text-base font-bold text-white mt-2">Computer Science & Engineering</h4>
-                                    <p class="text-sm text-indigo-300">Sapthagiri NPS University, Bengaluru</p>
-                                    <div class="flex items-center gap-4 mt-2">
-                                        <span class="text-xs text-slate-400">CGPA: <strong class="text-white">8.95</strong></span>
-                                        <span class="text-xs text-slate-500">|</span>
-                                        <span class="text-xs text-emerald-400 font-semibold">Active Pursuing</span>
-                                    </div>
-                                </div>
-                            </div>
-
                         </div>
+
+                        <!-- Timeline Card 2 -->
+                        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 flex flex-col justify-between space-y-4 hover:border-indigo-500/20 transition-all duration-300">
+                            <div>
+                                <div class="flex justify-between items-center gap-2">
+                                    <span class="px-2.5 py-1 rounded-md bg-indigo-50 text-indigo-750 text-[10px] font-bold uppercase">B.Tech Degree</span>
+                                    <span class="text-xs text-slate-500">August 2025 - Present</span>
+                                </div>
+                                <h4 class="text-lg font-bold text-slate-900 mt-3">Computer Science & Engineering</h4>
+                                <p class="text-xs text-indigo-600 font-medium">Sapthagiri NPS University, Bengaluru</p>
+                                <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                                    Actively pursuing B.Tech core CSE program with an average SGPA/CGPA of 8.95, specializing in data structures, algorithms, and web environments.
+                                </p>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
@@ -331,82 +401,116 @@
     <section id="skills" class="py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center space-y-3 mb-12">
-                <h3 class="text-xs font-bold uppercase text-rose-400 tracking-widest">Expertise Area</h3>
-                <h2 class="text-3xl sm:text-4xl font-display font-extrabold text-white">Technical Arsenal</h2>
-                <p class="text-slate-400 max-w-xl mx-auto text-sm">
+                <h3 class="text-xs font-bold uppercase text-rose-600 tracking-widest">Expertise Area</h3>
+                <h2 class="text-3xl sm:text-4xl font-display font-extrabold text-slate-900">Technical Arsenal</h2>
+                <p class="text-slate-600 max-w-xl mx-auto text-sm">
                     A comprehensive suite of languages, technologies, and methodologies developed to address real-world engineering challenges.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Bento Grid: Asymmetric 3-column grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <!-- Category 1: Languages -->
-                <div class="p-6 rounded-2xl bg-slate-900/40 border border-slate-800/80 glow-hover transition-all duration-300 space-y-4">
-                    <div class="w-10 h-10 rounded-lg bg-rose-500/10 flex items-center justify-center text-rose-400 text-lg">
-                        <i class="fa-solid fa-code"></i>
+                <!-- Category 1: Languages (Col span 1) -->
+                <div class="bento-card p-6 flex flex-col justify-between space-y-6">
+                    <div>
+                        <div class="w-10 h-10 rounded-lg bg-rose-50 flex items-center justify-center text-rose-600 text-lg mb-4">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900">Programming Languages</h3>
+                        <p class="text-xs text-slate-500 mt-1">Core coding syntax & systems.</p>
                     </div>
-                    <h3 class="text-lg font-bold text-white">Programming Languages</h3>
-                    <ul class="space-y-2.5">
-                        <li class="flex items-center justify-between text-sm text-slate-400">
-                            <span>Python</span>
-                            <span class="text-xs text-rose-400 font-semibold">Advanced</span>
+                    <ul class="space-y-3">
+                        <li class="flex items-center justify-between text-sm text-slate-600">
+                            <span class="font-medium">Python</span>
+                            <span class="text-[10px] uppercase font-bold text-rose-600 bg-rose-50 px-2 py-0.5 rounded border border-rose-100">Advanced</span>
                         </li>
-                        <li class="flex items-center justify-between text-sm text-slate-400">
-                            <span>C Programming</span>
-                            <span class="text-xs text-rose-400 font-semibold">Intermediate</span>
+                        <li class="flex items-center justify-between text-sm text-slate-600">
+                            <span class="font-medium">Java</span>
+                            <span class="text-[10px] uppercase font-bold text-rose-600 bg-rose-50 px-2 py-0.5 rounded border border-rose-100">Advanced</span>
+                        </li>
+                        <li class="flex items-center justify-between text-sm text-slate-600">
+                            <span class="font-medium">Kotlin</span>
+                            <span class="text-[10px] uppercase font-bold text-rose-600 bg-rose-50 px-2 py-0.5 rounded border border-rose-100">Advanced</span>
+                        </li>
+                        <li class="flex items-center justify-between text-sm text-slate-600">
+                            <span class="font-medium">C Programming</span>
+                            <span class="text-[10px] uppercase font-bold text-slate-500 bg-slate-50 px-2 py-0.5 rounded border border-slate-100">Intermediate</span>
                         </li>
                     </ul>
                 </div>
 
-                <!-- Category 2: Platforms & Hosting -->
-                <div class="p-6 rounded-2xl bg-slate-900/40 border border-slate-800/80 glow-hover transition-all duration-300 space-y-4">
-                    <div class="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-400 text-lg">
-                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                <!-- Category 2: Methodologies (Col span 2) -->
+                <div class="md:col-span-2 bento-card p-6 flex flex-col justify-between space-y-6">
+                    <div>
+                        <div class="w-10 h-10 rounded-lg bg-indigo-50 flex items-center justify-center text-indigo-600 text-lg mb-4">
+                            <i class="fa-solid fa-brain"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900">Core Methodologies & Architecture</h3>
+                        <p class="text-xs text-slate-500 mt-1">Engineering patterns and design structures implemented across production networks.</p>
                     </div>
-                    <h3 class="text-lg font-bold text-white">Hosting & Distribution</h3>
-                    <ul class="space-y-2.5">
-                        <li class="flex items-center justify-between text-sm text-slate-400">
-                            <span>Play Store</span>
-                            <span class="text-xs text-amber-400 font-semibold">App Deploy</span>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                        <span class="text-xs px-3 py-1.5 rounded-xl bg-slate-50 text-slate-600 border border-slate-200/60 font-semibold flex items-center gap-1.5">
+                            <i class="fa-solid fa-mobile-screen-button text-rose-600"></i> App Building
+                        </span>
+                        <span class="text-xs px-3 py-1.5 rounded-xl bg-slate-50 text-slate-600 border border-slate-200/60 font-semibold flex items-center gap-1.5">
+                            <i class="fa-solid fa-folder-tree text-indigo-600"></i> Data Structures
+                        </span>
+                        <span class="text-xs px-3 py-1.5 rounded-xl bg-slate-50 text-slate-600 border border-slate-200/60 font-semibold flex items-center gap-1.5">
+                            <i class="fa-solid fa-terminal text-amber-600"></i> Algorithms
+                        </span>
+                        <span class="text-xs px-3 py-1.5 rounded-xl bg-slate-50 text-slate-600 border border-slate-200/60 font-semibold flex items-center gap-1.5">
+                            <i class="fa-solid fa-gears text-rose-600"></i> RESTful APIs
+                        </span>
+                        <span class="text-xs px-3 py-1.5 rounded-xl bg-slate-50 text-slate-600 border border-slate-200/60 font-semibold flex items-center gap-1.5">
+                            <i class="fa-solid fa-bezier-curve text-indigo-600"></i> UI/UX Design
+                        </span>
+                        <span class="text-xs px-3 py-1.5 rounded-xl bg-slate-50 text-slate-600 border border-slate-200/60 font-semibold flex items-center gap-1.5">
+                            <i class="fa-solid fa-wand-magic-sparkles text-amber-600"></i> AI Productivity
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Category 3: Hosting & Distribution (Col span 1) -->
+                <div class="bento-card p-6 flex flex-col justify-between space-y-6">
+                    <div>
+                        <div class="w-10 h-10 rounded-lg bg-amber-50 flex items-center justify-center text-amber-600 text-lg mb-4">
+                            <i class="fa-solid fa-cloud-arrow-up"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900">Hosting & Distribution</h3>
+                        <p class="text-xs text-slate-500 mt-1">Application deployment channels.</p>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-center justify-between text-sm text-slate-600">
+                            <span class="font-medium">Play Store</span>
+                            <span class="text-[10px] uppercase font-bold text-amber-600 bg-amber-50 px-2 py-0.5 rounded border border-amber-100">App Deploy</span>
                         </li>
-                        <li class="flex items-center justify-between text-sm text-slate-400">
-                            <span>App Store</span>
-                            <span class="text-xs text-amber-400 font-semibold">iOS Distribution</span>
+                        <li class="flex items-center justify-between text-sm text-slate-600">
+                            <span class="font-medium">App Store</span>
+                            <span class="text-[10px] uppercase font-bold text-amber-600 bg-amber-50 px-2 py-0.5 rounded border border-amber-100">iOS Distribution</span>
                         </li>
                     </ul>
                 </div>
 
-                <!-- Category 3: Tools & IDEs -->
-                <div class="p-6 rounded-2xl bg-slate-900/40 border border-slate-800/80 glow-hover transition-all duration-300 space-y-4">
-                    <div class="w-10 h-10 rounded-lg bg-rose-500/10 flex items-center justify-center text-rose-400 text-lg">
-                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                <!-- Category 4: Tools & IDEs (Col span 2) -->
+                <div class="md:col-span-2 bento-card p-6 flex flex-col justify-between space-y-6">
+                    <div>
+                        <div class="w-10 h-10 rounded-lg bg-rose-50 flex items-center justify-center text-rose-600 text-lg mb-4">
+                            <i class="fa-solid fa-screwdriver-wrench"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900">Tools, Platforms & Development Environments</h3>
+                        <p class="text-xs text-slate-500 mt-1">Software workspaces, code versioning pipelines, and office suites.</p>
                     </div>
-                    <h3 class="text-lg font-bold text-white">Tools & Platforms</h3>
-                    <ul class="space-y-2">
-                        <li class="flex items-center gap-2 text-sm text-slate-400">
-                            <i class="fa-solid fa-circle-check text-rose-500 text-[10px]"></i> Antigravity / Windsurf
-                        </li>
-                        <li class="flex items-center gap-2 text-sm text-slate-400">
-                            <i class="fa-solid fa-circle-check text-rose-500 text-[10px]"></i> VS Code & Git/GitHub
-                        </li>
-                        <li class="flex items-center gap-2 text-sm text-slate-400">
-                            <i class="fa-solid fa-circle-check text-rose-500 text-[10px]"></i> Microsoft Office suite
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Category 4: Methodologies -->
-                <div class="p-6 rounded-2xl bg-slate-900/40 border border-slate-800/80 glow-hover transition-all duration-300 space-y-4">
-                    <div class="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400 text-lg">
-                        <i class="fa-solid fa-brain"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-white">Core Methodologies</h3>
-                    <div class="flex flex-wrap gap-1.5">
-                        <span class="text-xs px-2.5 py-1 rounded-md bg-slate-800 text-slate-300">Data Structures</span>
-                        <span class="text-xs px-2.5 py-1 rounded-md bg-slate-800 text-slate-300">Algorithms</span>
-                        <span class="text-xs px-2.5 py-1 rounded-md bg-slate-800 text-slate-300">RESTful APIs</span>
-                        <span class="text-xs px-2.5 py-1 rounded-md bg-slate-800 text-slate-300">UI/UX Design</span>
-                        <span class="text-xs px-2.5 py-1 rounded-md bg-slate-800 text-slate-300">AI Productivity</span>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 pt-2">
+                        <div class="flex items-center gap-2 text-xs text-slate-600 font-semibold bg-slate-50 p-2 rounded-xl border border-slate-100">
+                            <i class="fa-solid fa-circle-check text-rose-600"></i> Antigravity / Windsurf
+                        </div>
+                        <div class="flex items-center gap-2 text-xs text-slate-600 font-semibold bg-slate-50 p-2 rounded-xl border border-slate-100">
+                            <i class="fa-solid fa-circle-check text-rose-600"></i> VS Code & Git/GitHub
+                        </div>
+                        <div class="flex items-center gap-2 text-xs text-slate-600 font-semibold bg-slate-50 p-2 rounded-xl border border-slate-100 col-span-1 md:col-span-2">
+                            <i class="fa-solid fa-circle-check text-rose-600"></i> Microsoft Office Suite (Advanced Excel & Word)
+                        </div>
                     </div>
                 </div>
 
@@ -415,123 +519,225 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-20 glass-panel border-y border-slate-900">
+    <section id="projects" class="py-20 bg-slate-50 border-y border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center space-y-3 mb-12">
-                <h3 class="text-xs font-bold uppercase text-rose-400 tracking-widest">My Work</h3>
-                <h2 class="text-3xl sm:text-4xl font-display font-extrabold text-white">Featured Ecosystems</h2>
-                <p class="text-slate-400 max-w-xl mx-auto text-sm">
+                <h3 class="text-xs font-bold uppercase text-rose-600 tracking-widest">My Work</h3>
+                <h2 class="text-3xl sm:text-4xl font-display font-extrabold text-slate-900">Featured Ecosystems</h2>
+                <p class="text-slate-600 max-w-xl mx-auto text-sm">
                     A closer look at key AI products and platforms designed to serve students, professionals, and global deployment architectures.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Bento Grid: 3-Column Asymmetric Layout -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <!-- Project 1: Placement AI -->
-                <div class="group rounded-2xl bg-slate-900 border border-slate-800 overflow-hidden hover:border-rose-500/50 transition-all duration-300">
-                    <div class="h-48 bg-gradient-to-tr from-rose-950 via-slate-900 to-rose-900 flex items-center justify-center relative overflow-hidden p-6 border-b border-slate-800">
-                        <!-- Tech badges inside image box -->
-                        <div class="absolute top-4 left-4 flex gap-2">
-                            <span class="px-2 py-1 text-[10px] font-bold tracking-widest bg-rose-500 text-white rounded uppercase">AI & Mobile</span>
+                <!-- Project 1: Placement AI (Spans 2 cols, split horizontally on desktop) -->
+                <div class="md:col-span-2 group rounded-3xl bg-white border border-slate-200/80 overflow-hidden hover:border-rose-500/30 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col md:flex-row">
+                    <div class="md:w-5/12 bg-gradient-to-tr from-rose-50 via-slate-50 to-rose-100/40 flex flex-col justify-center items-center relative overflow-hidden p-6 border-r border-slate-100">
+                        <div class="absolute top-4 left-4">
+                            <span class="px-2 py-1 text-[9px] font-bold tracking-widest bg-rose-100 text-rose-700 border border-rose-200/40 rounded uppercase">AI & Career</span>
                         </div>
                         <div class="text-center space-y-2 z-10">
-                            <i class="fa-solid fa-wand-magic-sparkles text-4xl text-rose-400 group-hover:scale-110 transition duration-350"></i>
-                            <h4 class="text-lg font-display font-bold text-white mt-2">Placement AI Platform</h4>
+                            <i class="fa-solid fa-wand-magic-sparkles text-4xl text-rose-600 group-hover:scale-110 transition duration-350"></i>
+                            <h4 class="text-lg font-display font-bold text-slate-900 mt-2">Placement AI</h4>
                         </div>
                     </div>
-                    <div class="p-6 space-y-4">
-                        <div class="flex items-center justify-between">
-                            <h3 class="text-xl font-bold text-white">AI-Powered Career Prep System</h3>
-                            <span class="text-xs text-slate-500 font-medium">B.Tech Project</span>
-                        </div>
-                        <p class="text-sm text-slate-400 leading-relaxed">
-                            A smart, web-sourced infrastructure built to guide engineering and technical students through real-time career placement prep simulations, using state-of-the-art conversational AI pipelines.
-                        </p>
-                        <div class="pt-2">
-                            <div class="text-xs font-semibold text-slate-300 mb-2">Primary Toolset:</div>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-2.5 py-1 rounded bg-slate-850 text-xs text-rose-300 border border-slate-800">Antigravity</span>
-                                <span class="px-2.5 py-1 rounded bg-slate-850 text-xs text-rose-300 border border-slate-800">Windsurf</span>
-                                <span class="px-2.5 py-1 rounded bg-slate-850 text-xs text-rose-300 border border-slate-800">VS Code</span>
-                                <span class="px-2.5 py-1 rounded bg-slate-850 text-xs text-rose-300 border border-slate-800">API Integration</span>
+                    <div class="md:w-7/12 p-6 flex flex-col justify-between space-y-4">
+                        <div>
+                            <div class="flex items-center justify-between">
+                                <h3 class="text-lg font-bold text-slate-900">Career Prep Platform</h3>
+                                <span class="text-[10px] text-slate-500 font-medium">B.Tech Project</span>
+                            </div>
+                            <p class="text-xs text-slate-600 leading-relaxed mt-2">
+                                A smart, web-sourced infrastructure built to guide students through real-time career placement prep simulations, using state-of-the-art conversational AI pipelines.
+                            </p>
+                            <div class="mt-3 flex flex-wrap gap-1.5">
+                                <span class="px-2 py-0.5 rounded bg-slate-50 text-[10px] text-slate-650 border border-slate-200/60">Antigravity</span>
+                                <span class="px-2 py-0.5 rounded bg-slate-50 text-[10px] text-slate-650 border border-slate-200/60">Windsurf</span>
+                                <span class="px-2 py-0.5 rounded bg-slate-50 text-[10px] text-slate-650 border border-slate-200/60">API Integration</span>
                             </div>
                         </div>
-                        <div class="border-t border-slate-800 pt-4 mt-2">
-                            <h4 class="text-xs font-semibold text-slate-300 mb-2"><i class="fa-solid fa-list-check text-rose-400 mr-1.5"></i> Key Capabilities:</h4>
-                            <ul class="text-xs text-slate-400 space-y-2 mb-5">
-                                <li class="flex items-center gap-2">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-rose-400"></span>
-                                    Web source conversion to optimized Android & iOS platform code.
-                                </li>
-                                <li class="flex items-center gap-2">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-rose-400"></span>
-                                    Direct integration and cloud compilation to hosting builds (Play/App Store).
-                                </li>
-                            </ul>
 
-                            <div class="pt-4 border-t border-slate-800/60 flex items-center justify-between">
-                                <a href="https://placementaiplatform.vercel.app/" target="_blank" class="inline-flex items-center gap-2 px-4 py-2.5 text-xs font-bold text-white bg-gradient-to-r from-rose-600 to-rose-700 hover:from-rose-500 hover:to-rose-600 rounded-xl transition-all shadow-md shadow-rose-600/10 group-hover:scale-[1.02]">
-                                    <i class="fa-solid fa-wand-magic-sparkles"></i> Launch App <i class="fa-solid fa-arrow-up-right-from-square text-[9px] opacity-80 animate-pulse"></i>
-                                </a>
-                                <span class="text-[10px] text-emerald-400 flex items-center gap-1.5 font-semibold bg-emerald-500/10 px-2.5 py-1 rounded-full border border-emerald-500/20">
-                                    <span class="w-2.5 h-2.5 bg-emerald-400 rounded-full animate-ping"></span> Live on Vercel
-                                </span>
-                            </div>
+                        <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
+                            <a href="https://placementai.kaurahub.com/" target="_blank" class="inline-flex items-center gap-2 px-3 py-2 text-xs font-bold text-white bg-gradient-to-r from-rose-600 to-rose-700 hover:from-rose-500 hover:to-rose-600 rounded-xl transition-all shadow-md shadow-rose-600/10 group-hover:scale-[1.02]">
+                                Launch App <i class="fa-solid fa-arrow-up-right-from-square text-[8px]"></i>
+                            </a>
+                            <span class="text-[9px] text-emerald-700 flex items-center gap-1 font-semibold bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200/80">
+                                <span class="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-ping"></span> Live Platform
+                            </span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 2: KAURA -->
-                <div class="group rounded-2xl bg-slate-900 border border-slate-800 overflow-hidden hover:border-rose-500/50 transition-all duration-300">
-                    <div class="h-48 bg-gradient-to-tr from-rose-950 via-slate-900 to-amber-950/70 flex items-center justify-center relative overflow-hidden p-6 border-b border-slate-800">
-                        <div class="absolute top-4 left-4 flex gap-2">
-                            <span class="px-2 py-1 text-[10px] font-bold tracking-widest bg-amber-500 text-slate-950 rounded uppercase">Ecosystem</span>
+                <!-- Project 2: KAURA (Spans 1 col) -->
+                <div class="group rounded-3xl bg-white border border-slate-200/80 overflow-hidden hover:border-amber-500/30 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between">
+                    <div class="h-40 bg-gradient-to-tr from-amber-50 via-slate-50 to-amber-100/40 flex items-center justify-center relative overflow-hidden p-4 border-b border-slate-100">
+                        <div class="absolute top-4 left-4">
+                            <span class="px-2 py-0.5 text-[9px] font-bold tracking-widest bg-amber-100 text-amber-700 border border-amber-200/40 rounded uppercase">Student Portal</span>
+                        </div>
+                        <div class="text-center space-y-1">
+                            <i class="fa-solid fa-network-wired text-3xl text-amber-600 group-hover:scale-110 transition duration-350"></i>
+                            <h4 class="text-base font-display font-bold text-slate-900 mt-1">KAURA Platform</h4>
+                        </div>
+                    </div>
+                    <div class="p-5 flex flex-col justify-between flex-grow space-y-4">
+                        <div>
+                            <h3 class="text-base font-bold text-slate-900">Student Digital Ecosystem</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed mt-1">
+                                Connecting academic resources, digital identities, and information grids directly to modern web interfaces.
+                            </p>
+                        </div>
+                        <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
+                            <a href="https://www.kaurahub.com/" target="_blank" class="text-xs font-bold text-rose-600 hover:text-rose-700 flex items-center gap-1.5">
+                                Visit site <i class="fa-solid fa-arrow-up-right-from-square text-[8px]"></i>
+                            </a>
+                            <span class="text-[9px] text-emerald-700 flex items-center gap-1 font-semibold bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200/80">
+                                <span class="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-ping"></span> Live
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Interview Room (Spans 1 col) -->
+                <div class="group rounded-3xl bg-white border border-slate-200/80 overflow-hidden hover:border-rose-500/30 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between">
+                    <div class="h-40 bg-gradient-to-tr from-rose-50 via-slate-50 to-rose-100/40 flex items-center justify-center relative overflow-hidden p-4 border-b border-slate-100">
+                        <div class="absolute top-4 left-4">
+                            <span class="px-2 py-0.5 text-[9px] font-bold tracking-widest bg-rose-100 text-rose-700 border border-rose-200/40 rounded uppercase">AI Assessment</span>
+                        </div>
+                        <div class="text-center space-y-1">
+                            <i class="fa-solid fa-comments text-3xl text-rose-600 group-hover:scale-110 transition duration-350"></i>
+                            <h4 class="text-base font-display font-bold text-slate-900 mt-1">Interview Room</h4>
+                        </div>
+                    </div>
+                    <div class="p-5 flex flex-col justify-between flex-grow space-y-4">
+                        <div>
+                            <h3 class="text-base font-bold text-slate-900">AI Mock Assessment</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed mt-1">
+                                Simulated technical and behavioral interviews with semantic analysis and automated audio feedback tools.
+                            </p>
+                        </div>
+                        <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
+                            <a href="https://interview.kaurahub.com" target="_blank" class="text-xs font-bold text-rose-600 hover:text-rose-700 flex items-center gap-1.5">
+                                Launch <i class="fa-solid fa-arrow-up-right-from-square text-[8px]"></i>
+                            </a>
+                            <span class="text-[9px] text-emerald-700 flex items-center gap-1 font-semibold bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200/80">
+                                <span class="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-ping"></span> Live
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: Student Result Management (Spans 1 col) -->
+                <div class="group rounded-3xl bg-white border border-slate-200/80 overflow-hidden hover:border-indigo-500/30 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between">
+                    <div class="h-40 bg-gradient-to-tr from-indigo-50 via-slate-50 to-indigo-100/40 flex items-center justify-center relative overflow-hidden p-4 border-b border-slate-100">
+                        <div class="absolute top-4 left-4">
+                            <span class="px-2 py-0.5 text-[9px] font-bold tracking-widest bg-indigo-100 text-indigo-700 border border-indigo-200/40 rounded uppercase">Records</span>
+                        </div>
+                        <div class="text-center space-y-1">
+                            <i class="fa-solid fa-graduation-cap text-3xl text-indigo-600 group-hover:scale-110 transition duration-350"></i>
+                            <h4 class="text-base font-display font-bold text-slate-900 mt-1">Result Management</h4>
+                        </div>
+                    </div>
+                    <div class="p-5 flex flex-col justify-between flex-grow space-y-4">
+                        <div>
+                            <h3 class="text-base font-bold text-slate-900">Academic Database</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed mt-1">
+                                Secure grade and student query index system built for B.Tech course evaluation pipelines.
+                            </p>
+                        </div>
+                        <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
+                            <a href="http://result-liard.vercel.app/" target="_blank" class="text-xs font-bold text-rose-600 hover:text-rose-700 flex items-center gap-1.5">
+                                Launch <i class="fa-solid fa-arrow-up-right-from-square text-[8px]"></i>
+                            </a>
+                            <span class="text-[9px] text-emerald-700 flex items-center gap-1 font-semibold bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200/80">
+                                <span class="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-ping"></span> Live
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: Event Hub (Spans 1 col) -->
+                <div class="group rounded-3xl bg-white border border-slate-200/80 overflow-hidden hover:border-rose-500/30 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between">
+                    <div class="h-40 bg-gradient-to-tr from-rose-50 via-slate-50 to-rose-100/40 flex items-center justify-center relative overflow-hidden p-4 border-b border-slate-100">
+                        <div class="absolute top-4 left-4">
+                            <span class="px-2 py-0.5 text-[9px] font-bold tracking-widest bg-rose-100 text-rose-700 border border-rose-200/40 rounded uppercase">Events</span>
+                        </div>
+                        <div class="text-center space-y-1">
+                            <i class="fa-solid fa-calendar-days text-3xl text-rose-600 group-hover:scale-110 transition duration-350"></i>
+                            <h4 class="text-base font-display font-bold text-slate-900 mt-1">Event Hub</h4>
+                        </div>
+                    </div>
+                    <div class="p-5 flex flex-col justify-between flex-grow space-y-4">
+                        <div>
+                            <h3 class="text-base font-bold text-slate-900">Gathering Coordinator</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed mt-1">
+                                Decentralized scheduling, invitation grids, and guest monitoring designed for local community systems.
+                            </p>
+                        </div>
+                        <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
+                            <a href="https://social-eetirp.vercel.app" target="_blank" class="text-xs font-bold text-rose-600 hover:text-rose-700 flex items-center gap-1.5">
+                                Visit hub <i class="fa-solid fa-arrow-up-right-from-square text-[8px]"></i>
+                            </a>
+                            <span class="text-[9px] text-emerald-700 flex items-center gap-1 font-semibold bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200/80">
+                                <span class="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-ping"></span> Live
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6: Resume Builder (Spans 2 cols, split horizontally on desktop) -->
+                <div class="md:col-span-2 group rounded-3xl bg-white border border-slate-200/80 overflow-hidden hover:border-amber-500/30 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col md:flex-row">
+                    <div class="md:w-5/12 bg-gradient-to-tr from-amber-50 via-slate-50 to-amber-100/40 flex flex-col justify-center items-center relative overflow-hidden p-6 border-r border-slate-100">
+                        <div class="absolute top-4 left-4">
+                            <span class="px-2 py-1 text-[9px] font-bold tracking-widest bg-amber-100 text-amber-700 border border-amber-200/40 rounded uppercase">AI Creation</span>
                         </div>
                         <div class="text-center space-y-2 z-10">
-                            <i class="fa-solid fa-network-wired text-4xl text-amber-400 group-hover:scale-110 transition duration-350"></i>
-                            <h4 class="text-lg font-display font-bold text-white mt-2">KAURA Platform</h4>
+                            <i class="fa-solid fa-file-contract text-4xl text-amber-600 group-hover:scale-110 transition duration-350"></i>
+                            <h4 class="text-lg font-display font-bold text-slate-900 mt-2">Resume Builder</h4>
                         </div>
                     </div>
-                    <div class="p-6 space-y-4">
-                        <div class="flex items-center justify-between">
-                            <h3 class="text-xl font-bold text-white">Student Digital Ecosystem Platform</h3>
-                            <span class="text-xs text-slate-500 font-medium">B.Tech Project</span>
-                        </div>
-                        <p class="text-sm text-slate-400 leading-relaxed">
-                            An all-inclusive student ecosystem connecting academic resources, digital identities, and information grids directly to modern interfaces. Crafted for seamless multi-platform interaction.
-                        </p>
-                        <div class="pt-2">
-                            <div class="text-xs font-semibold text-slate-300 mb-2">Primary Toolset:</div>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-2.5 py-1 rounded bg-slate-850 text-xs text-rose-300 border border-slate-800">Antigravity</span>
-                                <span class="px-2.5 py-1 rounded bg-slate-850 text-xs text-rose-300 border border-slate-800">Windsurf</span>
-                                <span class="px-2.5 py-1 rounded bg-slate-850 text-xs text-rose-300 border border-slate-800">VS Code</span>
-                                <span class="px-2.5 py-1 rounded bg-slate-850 text-xs text-rose-300 border border-slate-800">Web Scraping</span>
+                    <div class="md:w-7/12 p-6 flex flex-col justify-between space-y-4">
+                        <div>
+                            <div class="flex items-center justify-between">
+                                <h3 class="text-lg font-bold text-slate-900">AI-Generated CV System</h3>
+                                <span class="text-[10px] text-slate-500 font-medium">EETIRP Venture</span>
+                            </div>
+                            <p class="text-xs text-slate-600 leading-relaxed mt-2">
+                                An automated builder that constructs, structures, and optimizes professional resume formats matching industry ATS scanning standards.
+                            </p>
+                            <div class="mt-3 flex flex-wrap gap-1.5">
+                                <span class="px-2 py-0.5 rounded bg-slate-50 text-[10px] text-slate-650 border border-slate-200/60">Next.js</span>
+                                <span class="px-2 py-0.5 rounded bg-slate-50 text-[10px] text-slate-650 border border-slate-200/60">TailwindCSS</span>
+                                <span class="px-2 py-0.5 rounded bg-slate-50 text-[10px] text-slate-650 border border-slate-200/60">AI Drafting</span>
                             </div>
                         </div>
-                        <div class="border-t border-slate-800 pt-4 mt-2">
-                            <h4 class="text-xs font-semibold text-slate-300 mb-2"><i class="fa-solid fa-list-check text-amber-400 mr-1.5"></i> Key Capabilities:</h4>
-                            <ul class="text-xs text-slate-400 space-y-2 mb-5">
-                                <li class="flex items-center gap-2">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
-                                    Web-scraping and data collection engines for real-time localized information.
-                                </li>
-                                <li class="flex items-center gap-2">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
-                                    Targeted mobile application builds deployed via structured source codes.
-                                </li>
-                            </ul>
 
-                            <div class="pt-4 border-t border-slate-800/60 flex items-center justify-between">
-                                <a href="https://www.kaurahub.com/" target="_blank" class="inline-flex items-center gap-2 px-4 py-2.5 text-xs font-bold text-white bg-gradient-to-r from-rose-600 to-amber-500 hover:from-rose-500 hover:to-amber-400 rounded-xl transition-all shadow-md shadow-rose-600/10 group-hover:scale-[1.02]">
-                                    <i class="fa-solid fa-globe"></i> Visit kaurahub.com <i class="fa-solid fa-arrow-up-right-from-square text-[9px] opacity-80 animate-pulse"></i>
-                                </a>
-                                <span class="text-[10px] text-emerald-400 flex items-center gap-1.5 font-semibold bg-emerald-500/10 px-2.5 py-1 rounded-full border border-emerald-500/20">
-                                    <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-ping"></span> Live Platform
-                                </span>
-                            </div>
+                        <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
+                            <a href="https://airesume.kaurahub.com" target="_blank" class="inline-flex items-center gap-2 px-3 py-2 text-xs font-bold text-white bg-gradient-to-r from-rose-600 to-rose-700 hover:from-rose-50 hover:to-rose-600 rounded-xl transition-all shadow-md shadow-rose-600/10 group-hover:scale-[1.02]">
+                                Build Resume <i class="fa-solid fa-arrow-up-right-from-square text-[8px]"></i>
+                            </a>
+                            <span class="text-[9px] text-emerald-700 flex items-center gap-1 font-semibold bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200/80">
+                                <span class="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-ping"></span> Live Platform
+                            </span>
                         </div>
                     </div>
+                </div>
+
+                <!-- Card 7: Collaborative CTA (Spans 1 col) -->
+                <div class="group rounded-3xl bg-gradient-to-br from-rose-500 to-rose-700 text-white p-6 shadow-sm hover:shadow-md hover:scale-[1.02] transition-all duration-300 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="w-10 h-10 rounded-xl bg-white/15 flex items-center justify-center text-white text-lg">
+                            <i class="fa-solid fa-hands-holding-circle"></i>
+                        </div>
+                        <h3 class="text-lg font-bold">Need Custom AI Solutions?</h3>
+                        <p class="text-xs text-white/90 leading-relaxed">
+                            Open to software co-founding systems, corporate project collaboration, or internships. Let's start building.
+                        </p>
+                    </div>
+                    <a href="#contact" class="inline-flex items-center justify-center gap-2 py-2 px-4 bg-white text-rose-700 rounded-xl font-bold text-xs hover:bg-slate-50 transition-colors mt-4">
+                        Connect Now <i class="fa-solid fa-arrow-right"></i>
+                    </a>
                 </div>
 
             </div>
@@ -542,63 +748,68 @@
     <section id="certifications" class="py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center space-y-3 mb-12">
-                <h3 class="text-xs font-bold uppercase text-rose-400 tracking-widest">Achievements</h3>
-                <h2 class="text-3xl sm:text-4xl font-display font-extrabold text-white">Professional Credentials</h2>
-                <p class="text-slate-400 max-w-xl mx-auto text-sm">
+                <h3 class="text-xs font-bold uppercase text-rose-600 tracking-widest">Achievements</h3>
+                <h2 class="text-3xl sm:text-4xl font-display font-extrabold text-slate-900">Professional Credentials</h2>
+                <p class="text-slate-600 max-w-xl mx-auto text-sm">
                     Verified certificates proving specialization in modern programming environments, data tools, and generative AI processes.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Bento grid for credentials: 4 columns on large screens -->
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
                 
-                <!-- Certificate 1: Python -->
-                <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-rose-500/40 hover:bg-slate-900 transition duration-300 flex flex-col justify-between h-full">
+                <!-- Certificate 1: Python (Spans 2 cols) -->
+                <div class="bento-card lg:col-span-2 p-6 flex flex-col justify-between h-full">
                     <div class="space-y-4">
-                        <div class="w-12 h-12 rounded-xl bg-rose-500/10 flex items-center justify-center text-rose-400 text-xl">
+                        <div class="w-12 h-12 rounded-xl bg-rose-50 flex items-center justify-center text-rose-600 text-xl">
                             <i class="fa-brands fa-python"></i>
                         </div>
-                        <h3 class="text-lg font-bold text-white">Python Programming Specialist</h3>
-                        <p class="text-xs text-slate-400 leading-relaxed">
+                        <h3 class="text-lg font-bold text-slate-900">Python Programming Specialist</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed">
                             Deep dive into core syntactical architecture, object-oriented concepts, structural paradigms, and localized automated script development.
                         </p>
                     </div>
-                    <div class="pt-6 border-t border-slate-800/80 mt-4 flex items-center justify-between text-[11px] text-rose-300">
+                    <div class="pt-6 border-t border-slate-100 mt-4 flex items-center justify-between text-[11px] text-rose-600">
                         <span class="font-bold uppercase tracking-widest font-display">Developer Certified</span>
                         <i class="fa-solid fa-award text-sm"></i>
                     </div>
                 </div>
 
-                <!-- Certificate 2: Office Specialist -->
-                <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-amber-500/40 hover:bg-slate-900 transition duration-300 flex flex-col justify-between h-full">
+                <!-- Certificate 2: Office Specialist (Spans 2 cols) -->
+                <div class="bento-card lg:col-span-2 p-6 flex flex-col justify-between h-full">
                     <div class="space-y-4">
-                        <div class="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-400 text-xl">
+                        <div class="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center text-amber-600 text-xl">
                             <i class="fa-regular fa-file-excel"></i>
                         </div>
-                        <h3 class="text-lg font-bold text-white">Microsoft Office Specialist</h3>
-                        <p class="text-xs text-slate-400 leading-relaxed">
+                        <h3 class="text-lg font-bold text-slate-900">Microsoft Office Specialist</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed">
                             Professional certification focusing on advanced spreadsheet compilation (Excel), complex data modeling, formatting pipelines, and corporate documents (Word).
                         </p>
                     </div>
-                    <div class="pt-6 border-t border-slate-800/80 mt-4 flex items-center justify-between text-[11px] text-amber-400">
+                    <div class="pt-6 border-t border-slate-100 mt-4 flex items-center justify-between text-[11px] text-amber-600">
                         <span class="font-bold uppercase tracking-widest font-display">Analytical Certified</span>
                         <i class="fa-solid fa-shield-halved text-sm"></i>
                     </div>
                 </div>
 
-                <!-- Certificate 3: Digital Productivity with AI -->
-                <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-rose-500/40 hover:bg-slate-900 transition duration-300 flex flex-col justify-between h-full">
-                    <div class="space-y-4">
-                        <div class="w-12 h-12 rounded-xl bg-rose-500/10 flex items-center justify-center text-rose-400 text-xl">
+                <!-- Certificate 3: Digital Productivity with AI (Spans all 4 cols, horizontal on desktop) -->
+                <div class="bento-card lg:col-span-4 p-6 flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div class="flex items-center gap-4 text-left">
+                        <div class="w-14 h-14 shrink-0 rounded-xl bg-rose-50 flex items-center justify-center text-rose-600 text-2xl">
                             <i class="fa-solid fa-robot"></i>
                         </div>
-                        <h3 class="text-lg font-bold text-white">Digital Productivity with AI</h3>
-                        <p class="text-xs text-slate-400 leading-relaxed">
-                            Advanced methodologies in deploying and prompting generative AI model architectures to radically optimize engineering workflows, script creations, and workspace automations.
-                        </p>
+                        <div class="space-y-1">
+                            <h3 class="text-lg font-bold text-slate-900">Digital Productivity with AI</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Advanced methodologies in deploying and prompting generative AI model architectures to radically optimize engineering workflows, script creations, and workspace automations.
+                            </p>
+                        </div>
                     </div>
-                    <div class="pt-6 border-t border-slate-800/80 mt-4 flex items-center justify-between text-[11px] text-rose-400">
-                        <span class="font-bold uppercase tracking-widest font-display">Next-Gen Workflow</span>
-                        <i class="fa-solid fa-wand-magic-sparkles text-sm"></i>
+                    <div class="pt-4 md:pt-0 md:pl-6 border-t md:border-t-0 md:border-l border-slate-100 shrink-0 flex flex-col items-start md:items-end justify-center">
+                        <span class="px-3 py-1 rounded bg-rose-50 text-rose-700 text-[10px] font-bold uppercase tracking-widest font-display flex items-center gap-1.5">
+                            <span class="w-1.5 h-1.5 bg-rose-500 rounded-full animate-ping"></span> Next-Gen Workflow
+                        </span>
+                        <span class="text-[10px] text-slate-400 mt-1 flex items-center gap-1">Certified Specialist <i class="fa-solid fa-wand-magic-sparkles"></i></span>
                     </div>
                 </div>
 
@@ -607,61 +818,61 @@
     </section>
 
     <!-- Contact & Footer Section -->
-    <section id="contact" class="py-20 glass-panel border-t border-slate-900 relative">
+    <section id="contact" class="py-20 bg-slate-50 border-t border-slate-200 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <!-- Contact Header -->
             <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
-                <h3 class="text-xs font-bold uppercase text-rose-400 tracking-widest">Get In Touch</h3>
-                <h2 class="text-3xl sm:text-4xl font-display font-extrabold text-white">Let's build something exceptional</h2>
-                <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+                <h3 class="text-xs font-bold uppercase text-rose-600 tracking-widest">Get In Touch</h3>
+                <h2 class="text-3xl sm:text-4xl font-display font-extrabold text-slate-900">Let's build something exceptional</h2>
+                <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
                     Whether you are looking for a software developer intern, interested in discussing co-founding solutions under EETIRP PVT LTD, or want to collaborate on AI-driven systems, feel free to reach out directly through any of the channels below.
                 </p>
             </div>
 
-            <!-- 3-Column Premium Contact Cards -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- 3-Column Premium Contact Cards (Using bento styling) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
                 <!-- Card 1: Direct Call -->
-                <a href="tel:+917411490271" class="group p-8 rounded-2xl bg-slate-950/50 border border-slate-850 hover:border-rose-500/30 hover:bg-slate-900/40 transition-all duration-300 flex flex-col items-center text-center space-y-4">
-                    <div class="w-14 h-14 rounded-xl bg-rose-500/10 flex items-center justify-center text-rose-400 text-2xl group-hover:scale-110 transition duration-300">
+                <a href="tel:+917411490271" class="bento-card p-8 flex flex-col items-center text-center space-y-4">
+                    <div class="w-14 h-14 rounded-xl bg-rose-50 flex items-center justify-center text-rose-600 text-2xl">
                         <i class="fa-solid fa-phone"></i>
                     </div>
                     <div class="space-y-1">
                         <p class="text-xs text-slate-500 uppercase tracking-widest font-semibold">Direct Call</p>
-                        <h4 class="text-base font-bold text-white group-hover:text-rose-400 transition">+91 7411490271</h4>
+                        <h4 class="text-base font-bold text-slate-900">+91 7411490271</h4>
                     </div>
-                    <p class="text-xs text-slate-400">Available for calls, project briefings, and dynamic startup discussions.</p>
+                    <p class="text-xs text-slate-600">Available for calls, project briefings, and dynamic startup discussions.</p>
                 </a>
 
                 <!-- Card 2: Official Email -->
-                <a href="mailto:Achark659@gmail.com" class="group p-8 rounded-2xl bg-slate-950/50 border border-slate-850 hover:border-rose-500/30 hover:bg-slate-900/40 transition-all duration-300 flex flex-col items-center text-center space-y-4">
-                    <div class="w-14 h-14 rounded-xl bg-rose-500/10 flex items-center justify-center text-rose-400 text-2xl group-hover:scale-110 transition duration-300">
+                <a href="mailto:Achark659@gmail.com" class="bento-card p-8 flex flex-col items-center text-center space-y-4">
+                    <div class="w-14 h-14 rounded-xl bg-rose-50 flex items-center justify-center text-rose-600 text-2xl">
                         <i class="fa-solid fa-envelope"></i>
                     </div>
                     <div class="space-y-1">
                         <p class="text-xs text-slate-500 uppercase tracking-widest font-semibold">Official Email</p>
-                        <h4 class="text-base font-bold text-white group-hover:text-rose-400 transition">Achark659@gmail.com</h4>
+                        <h4 class="text-base font-bold text-slate-900">Achark659@gmail.com</h4>
                     </div>
-                    <p class="text-xs text-slate-400">Reach out for business inquiries, developer recruitment, and corporate proposals.</p>
+                    <p class="text-xs text-slate-600">Reach out for business inquiries, developer recruitment, and corporate proposals.</p>
                 </a>
 
                 <!-- Card 3: Base Location -->
-                <div class="p-8 rounded-2xl bg-slate-950/50 border border-slate-850 flex flex-col items-center text-center space-y-4">
-                    <div class="w-14 h-14 rounded-xl bg-rose-500/10 flex items-center justify-center text-rose-400 text-2xl">
+                <div class="bento-card p-8 flex flex-col items-center text-center space-y-4">
+                    <div class="w-14 h-14 rounded-xl bg-rose-50 flex items-center justify-center text-rose-600 text-2xl">
                         <i class="fa-solid fa-location-dot"></i>
                     </div>
                     <div class="space-y-1">
                         <p class="text-xs text-slate-500 uppercase tracking-widest font-semibold">Base Location</p>
-                        <h4 class="text-base font-bold text-white">Bengaluru, India</h4>
+                        <h4 class="text-base font-bold text-slate-900">Bengaluru, India</h4>
                     </div>
-                    <p class="text-xs text-slate-400">Chikkabanavara, Bengaluru - 560090. Open to remote & local hybrid ecosystems.</p>
+                    <p class="text-xs text-slate-600">Chikkabanavara, Bengaluru - 560090. Open to remote & local hybrid ecosystems.</p>
                 </div>
 
             </div>
 
             <!-- Footer Bottom -->
-            <div class="border-t border-slate-900 mt-20 pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+            <div class="border-t border-slate-200 mt-20 pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-slate-500 gap-4">
                 <p>&copy; 2026 Karthik C M. All rights reserved.</p>
                 <p>Designed with corporate branding systems & developer workflows.</p>
             </div>
