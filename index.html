@@ -3,21 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Karthik C M | Co-Founder & Director of EETIRP</title>
-    <meta name="description" content="Karthik C M — Executive Co-Founder & Director of EETIRP PVT LTD and Computer Science & Engineering Student at Sapthagiri NPS University (8.95 CGPA).">
+    <title>Karthik C M | Co-Founder & Director of EETIRP | Systems & AI Engineer</title>
+    <meta name="description" content="Official portfolio of Karthik C M — Co-Founder & Director of EETIRP PVT LTD and B.Tech CSE student at Sapthagiri NPS University (8.95 CGPA). Building smart AI assessment platforms, student ecosystems, and cloud systems.">
+    <meta name="keywords" content="Karthik C M, EETIRP, Sapthagiri NPS University, Bangalore, AI Platforms, Software Engineer, KAURA Hub, Placement AI">
+    <meta name="author" content="Karthik C M">
+    <meta name="theme-color" content="#1e3a8a">
+
+    <!-- Open Graph / Facebook / LinkedIn -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Karthik C M | Co-Founder & Director of EETIRP">
+    <meta property="og:description" content="Executive Co-Founder & Director of EETIRP PVT LTD and Computer Science Engineer (8.95 CGPA). Building adaptive AI assessment systems and student ecosystems.">
+    <meta property="og:image" content="profile.jpeg">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Karthik C M | Co-Founder & Director of EETIRP">
+    <meta name="twitter:description" content="Executive Co-Founder & Director of EETIRP PVT LTD and Computer Science Engineer (8.95 CGPA).">
+    <meta name="twitter:image" content="profile.jpeg">
+
+    <!-- Google Fonts Preconnect for High Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
     
     <!-- FontAwesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     
-    <!-- Custom Design Stylesheet -->
+    <!-- Executive Design Stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- READING SCROLL PROGRESS BAR -->
+    <div class="scroll-progress-bar" id="scroll-progress" aria-hidden="true"></div>
+
     <!-- STICKY HEADER & NAVBAR -->
     <header class="header" id="header">
         <div class="container nav-container">
-            <a href="#" class="logo">
+            <a href="#home" class="logo">
                 KARTHIK
                 <span class="logo-dot"></span>
             </a>
@@ -31,13 +54,18 @@
                 <li><a href="#certifications" class="nav-link">Certifications</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
-            
-            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu">
-                <i class="fas fa-bars"></i>
-            </button>
+
+            <div class="nav-actions">
+                <a href="#contact" class="btn btn-primary nav-cta">
+                    <i class="fas fa-paper-plane"></i> Get in Touch
+                </a>
+                <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
         </div>
 
-        <!-- Mobile Nav Drawer -->
+        <!-- Mobile Navigation Drawer -->
         <div class="mobile-nav-drawer" id="mobile-drawer">
             <ul>
                 <li><a href="#home" class="mobile-link">Home</a></li>
@@ -53,26 +81,76 @@
 
     <!-- HERO SECTION -->
     <section class="hero" id="home">
-        <div class="container">
+        <!-- Floating Ambient Glow Orbs -->
+        <div class="hero-ambient-orb orb-1" aria-hidden="true"></div>
+        <div class="hero-ambient-orb orb-2" aria-hidden="true"></div>
+
+        <div class="container" style="position: relative; z-index: 2;">
             <div class="hero-grid">
-                <div class="hero-content">
-                    <span class="hero-greeting">
-                        <span class="badge">EETIRP Ecosystem Active</span>
-                        Co-Founder & Director of EETIRP
-                    </span>
-                    <h1 class="hero-title">Karthik C M</h1>
-                    <h2 class="hero-subtitle">Building the future of smart tech & AI platforms</h2>
+                <div class="hero-content reveal">
+                    <div class="hero-status-tag">
+                        <span class="badge badge-emerald">
+                            <span class="pulse-dot"></span> EETIRP Ecosystem Active
+                        </span>
+                        <span>Co-Founder &amp; Director</span>
+                    </div>
+
+                    <h1 class="hero-title">
+                        Karthik <span class="gradient-text">C M</span>
+                    </h1>
+
+                    <div class="hero-role-title">
+                        <i class="fas fa-code"></i> Systems Engineer &amp; Startup Executive
+                    </div>
+
                     <p class="hero-desc">
-                        Democratizing industry-level education, placement bootcamps, and adaptive AI assessment networks for students across India. Leading systems design, platform code, and business roadmap strategies.
+                        Democratizing industry-level technical education, placement bootcamps, and adaptive AI assessment engines for students nationwide. Combining deep software engineering in Python, Java, Kotlin, and modern full-stack frameworks with high-velocity venture leadership.
                     </p>
-                    <div class="hero-buttons">
-                        <a href="#contact" class="btn btn-primary">Connect With Me <i class="fas fa-arrow-right"></i></a>
-                        <a href="#eetirp" class="btn btn-secondary"><i class="fas fa-building"></i> Learn about EETIRP</a>
+
+                    <div class="hero-actions">
+                        <a href="#contact" class="btn btn-primary">
+                            Initiate Contact <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#eetirp" class="btn btn-secondary">
+                            <i class="fas fa-building"></i> EETIRP Spotlight
+                        </a>
+                    </div>
+
+                    <!-- Hero Quick Metrics Bar with Live Counting -->
+                    <div class="hero-metrics-bar">
+                        <div class="metric-item">
+                            <span class="metric-number" data-count="6" data-suffix="+">0+</span>
+                            <span class="metric-label">Production Apps</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-number" data-count="100" data-suffix="+">0+</span>
+                            <span class="metric-label">Engineers Mentored</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-number" data-count="10" data-suffix="+">0+</span>
+                            <span class="metric-label">Campus Bootcamps</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-number" data-count="8.95" data-decimals="2">0.00</span>
+                            <span class="metric-label">B.Tech CGPA</span>
+                        </div>
                     </div>
                 </div>
-                <div class="hero-image-wrapper">
-                    <div class="hero-image-frame">
-                        <img src="profile.jpeg" alt="Karthik C M" class="hero-img" onerror="this.onerror=null; this.src='https://placehold.co/320x400/2563eb/ffffff?text=Karthik+C+M';">
+
+                <!-- Profile Presentation Card with Floating Badge -->
+                <div class="hero-image-wrapper reveal reveal-delay-2">
+                    <div class="hero-image-card">
+                        <div class="hero-image-inner">
+                            <img src="profile.jpeg" alt="Karthik C M - Co-Founder & Director of EETIRP" class="hero-img" width="330" height="390" fetchpriority="high" onerror="this.onerror=null; this.src='https://placehold.co/330x390/1d4ed8/ffffff?text=Karthik+C+M';">
+                        </div>
+                        <div class="hero-image-floating-badge">
+                            <div class="floating-badge-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <div class="floating-badge-text">
+                                Director @ EETIRP PVT LTD
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -82,76 +160,125 @@
     <!-- ABOUT SECTION (BENTO GRID) -->
     <section class="section" id="about">
         <div class="container">
-            <div class="section-title">
-                <h2>About Me</h2>
-                <p>Personal brand dimensions, educational foundations, and vision metrics</p>
+            <div class="section-header reveal">
+                <span class="section-kicker"><i class="fas fa-user-tie"></i> Profile</span>
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">Executive leadership, academic foundation, and technical capability dimensions</p>
             </div>
             
-            <div class="about-bento-grid">
-                <!-- Bio Card -->
-                <div class="bento-card bento-bio">
+            <div class="bento-grid">
+                <!-- 1. Executive Bio (Span 7) -->
+                <div class="bento-card bento-bio reveal reveal-delay-1">
                     <h3 class="bento-card-title">
-                        <i class="fas fa-user-tie"></i> Executive Profile & Vision
+                        <i class="fas fa-compass"></i> Executive Profile &amp; Mission
                     </h3>
                     <p>
-                        I am the Executive Co-Founder and Director of <strong>EETIRP PVT LTD</strong>. My core mission is to bridge the massive gap between academic curricula and actual tech industry requirements. Through adaptive AI simulators, automated coding evaluations, and placement preparations, we empower students to unlock peak technical capability.
+                        I am the Executive Co-Founder and Director of <strong>EETIRP PVT LTD</strong>. My mission is to bridge the acute divide between textbook academic syllabi and fast-paced tech industry requirements. Through adaptive AI simulators, automated coding evaluations, and high-impact placement bootcamps, we empower students to unlock peak technical competence.
                     </p>
                     <p>
-                        Combining systems engineering depth in Python, Java, Kotlin, and modern full-stack frameworks with strategic business leadership, I oversee product roadmaps, deployment cycles, and academic institution partnerships.
+                        Blending systems engineering rigor across Python, Java, Kotlin, and modern full-stack web architectures with strategic venture leadership, I oversee product roadmaps, deployment cycles, and academic institution partnerships across India.
                     </p>
                 </div>
                 
-                <!-- Education Card -->
-                <div class="bento-card bento-education">
+                <!-- 2. Academic Rigor (Span 5) -->
+                <div class="bento-card bento-education reveal reveal-delay-2">
                     <h3 class="bento-card-title">
-                        <i class="fas fa-graduation-cap"></i> Education
+                        <i class="fas fa-graduation-cap"></i> Academic Credentials
                     </h3>
-                    <div class="edu-item">
-                        <div class="edu-school">Sapthagiri NPS University</div>
-                        <div class="edu-degree">B.Tech in Computer Science & Engineering</div>
-                        <div class="edu-meta">CGPA: 8.95 | Aug 2025 - Pursuing</div>
+                    <div class="edu-entry">
+                        <div class="edu-institution">
+                            <span>Sapthagiri NPS University</span>
+                            <span class="edu-cgpa-pill">8.95 CGPA</span>
+                        </div>
+                        <div class="edu-degree">B.Tech in Computer Science &amp; Engineering</div>
+                        <div class="edu-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Aug 2025 - Pursuing</span>
+                            <span><i class="fas fa-location-dot"></i> Bengaluru</span>
+                        </div>
                     </div>
-                    <div class="edu-item">
-                        <div class="edu-degree">Academic Distinction</div>
-                        <div class="edu-meta">Specializing in Data Structures, Algorithms, AI workflows, and software system design.</div>
+                    <div class="edu-entry">
+                        <div class="edu-institution">
+                            <span>Specialization Scope</span>
+                        </div>
+                        <div class="edu-degree">Core Algorithms &amp; Distributed Systems</div>
+                        <div class="edu-meta">
+                            <span>Data Structures, AI Workflows &amp; Cloud Deployment Pipelines</span>
+                        </div>
                     </div>
                 </div>
                 
-                <!-- Contact Info Card -->
-                <div class="bento-card bento-contact-info">
+                <!-- 3. Direct Comms (Span 4) -->
+                <div class="bento-card bento-contact reveal reveal-delay-1">
                     <h3 class="bento-card-title">
-                        <i class="fas fa-network-wired"></i> Quick Comms
+                        <i class="fas fa-bolt"></i> Direct Comms
                     </h3>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <a href="mailto:Achark659@gmail.com">Achark659@gmail.com</a>
+                    <div class="contact-item-row">
+                        <div class="contact-item-left">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:Achark659@gmail.com" class="contact-link">Achark659@gmail.com</a>
+                        </div>
+                        <button class="contact-copy-btn" data-copy="Achark659@gmail.com" title="Copy Email" aria-label="Copy Email Address">
+                            <i class="far fa-copy"></i>
+                        </button>
                     </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <a href="tel:+917411490271">+91 7411490271</a>
+                    <div class="contact-item-row">
+                        <div class="contact-item-left">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+917411490271" class="contact-link">+91 7411490271</a>
+                        </div>
+                        <button class="contact-copy-btn" data-copy="+917411490271" title="Copy Phone Number" aria-label="Copy Phone Number">
+                            <i class="far fa-copy"></i>
+                        </button>
                     </div>
-                    <div class="contact-item">
-                        <i class="fas fa-location-dot"></i>
-                        <span>Bengaluru, India</span>
+                    <div class="contact-item-row">
+                        <div class="contact-item-left">
+                            <i class="fas fa-location-dot"></i>
+                            <span>Bengaluru, Karnataka, India</span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Tools & Stack Card -->
-                <div class="bento-card bento-tools">
+                <!-- 4. Technical Stack & Tooling (Span 8) -->
+                <div class="bento-card bento-skills reveal reveal-delay-2">
                     <h3 class="bento-card-title">
-                        <i class="fas fa-screwdriver-wrench"></i> Technical Stack & Tools
+                        <i class="fas fa-layer-group"></i> Technical Core &amp; Tools
                     </h3>
-                    <div class="tools-grid">
-                        <div class="tool-chip"><i class="fab fa-python"></i> Python</div>
-                        <div class="tool-chip"><i class="fab fa-java"></i> Java</div>
-                        <div class="tool-chip"><i class="fas fa-code"></i> Kotlin</div>
-                        <div class="tool-chip"><i class="fas fa-terminal"></i> C Language</div>
-                        <div class="tool-chip"><i class="fas fa-gears"></i> RESTful APIs</div>
-                        <div class="tool-chip"><i class="fas fa-robot"></i> AI Pipelines</div>
-                        <div class="tool-chip"><i class="fab fa-google-play"></i> Play Store Deploy</div>
-                        <div class="tool-chip"><i class="fab fa-app-store-ios"></i> App Store Deploy</div>
-                        <div class="tool-chip"><i class="fas fa-laptop-code"></i> Antigravity & Windsurf</div>
-                        <div class="tool-chip"><i class="fas fa-file-excel"></i> MS Office Suite</div>
+                    <div class="skills-container">
+                        <div>
+                            <div class="skill-category-title">Core Languages</div>
+                            <div class="skill-chips-row">
+                                <span class="skill-chip"><i class="fab fa-python"></i> Python</span>
+                                <span class="skill-chip"><i class="fab fa-java"></i> Java</span>
+                                <span class="skill-chip"><i class="fas fa-code"></i> Kotlin</span>
+                                <span class="skill-chip"><i class="fas fa-terminal"></i> C Language</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="skill-category-title">AI &amp; Backend Systems</div>
+                            <div class="skill-chips-row">
+                                <span class="skill-chip"><i class="fas fa-robot"></i> AI Pipelines</span>
+                                <span class="skill-chip"><i class="fas fa-gears"></i> RESTful APIs</span>
+                                <span class="skill-chip"><i class="fas fa-database"></i> Database Indexing</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="skill-category-title">Deployment &amp; Cloud</div>
+                            <div class="skill-chips-row">
+                                <span class="skill-chip"><i class="fab fa-google-play"></i> Play Store Deploy</span>
+                                <span class="skill-chip"><i class="fab fa-app-store-ios"></i> App Store Deploy</span>
+                                <span class="skill-chip"><i class="fas fa-cloud"></i> Vercel</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="skill-category-title">Workflows &amp; Productivity</div>
+                            <div class="skill-chips-row">
+                                <span class="skill-chip"><i class="fas fa-laptop-code"></i> Antigravity &amp; Windsurf</span>
+                                <span class="skill-chip"><i class="fas fa-file-excel"></i> MS Office Suite</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -159,86 +286,104 @@
     </section>
 
     <!-- FOUNDER JOURNEY SECTION -->
-    <section class="section" id="journey" style="background: rgba(15, 23, 42, 0.015); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+    <section class="section section-alt" id="journey">
         <div class="container">
-            <div class="section-title">
-                <h2>Founder Journey</h2>
-                <p>The history, challenges, milestones, and future vision of EETIRP</p>
+            <div class="section-header reveal">
+                <span class="section-kicker"><i class="fas fa-road"></i> Trajectory</span>
+                <h2 class="section-title">Founder Journey</h2>
+                <p class="section-subtitle">How EETIRP evolved from an observed campus divide into an enterprise AI ecosystem</p>
             </div>
             
-            <div class="journey-grid">
+            <div class="journey-timeline-grid">
                 <!-- Journey 1 -->
-                <div class="journey-card">
-                    <div class="journey-badge"><i class="fas fa-seedling"></i></div>
+                <div class="timeline-card reveal reveal-delay-1">
+                    <div class="timeline-phase-tag">Phase 01 &bull; Genesis</div>
+                    <div class="timeline-icon-box"><i class="fas fa-seedling"></i></div>
                     <h3>Why I Co-Founded EETIRP</h3>
                     <p>
-                        I noticed an alarming disconnect during my early academic career: while companies demanded practical exposure to software workflows, microservice architectures, and data design, classrooms focused almost exclusively on dry theory. I started EETIRP to build an interactive, hands-on student ecosystem providing automated code evaluations, AI mentors, and industry-oriented training.
+                        I noticed an alarming gap early in college: while top companies demand practical exposure to microservices, modern APIs, and clean architecture, academic courses focus almost purely on abstract theory. I started EETIRP to build an interactive, hands-on student ecosystem.
                     </p>
                 </div>
                 
                 <!-- Journey 2 -->
-                <div class="journey-card">
-                    <div class="journey-badge"><i class="fas fa-mountain"></i></div>
-                    <h3>Challenges Overcome</h3>
+                <div class="timeline-card reveal reveal-delay-2">
+                    <div class="timeline-phase-tag">Phase 02 &bull; Engineering</div>
+                    <div class="timeline-icon-box"><i class="fas fa-mountain"></i></div>
+                    <h3>Overcoming Bottlenecks</h3>
                     <p>
-                        Launching a startup as a student in Bengaluru is demanding. We faced early difficulties deploying high-volume API registration loops, scaling candidate admission databases under heavy traffic, and designing lightweight algorithms that adapt to individual capability matrices. Standardizing backend routes using Express and cloud databases solved these bottlenecks.
+                        Launching a venture as a student in Bengaluru is demanding. We engineered high-volume API registration loops, scaled candidate assessment databases under intense test traffic, and resolved latency bottlenecks by standardizing backend routes on modern cloud architectures.
                     </p>
                 </div>
                 
                 <!-- Journey 3 -->
-                <div class="journey-card">
-                    <div class="journey-badge"><i class="fas fa-trophy"></i></div>
+                <div class="timeline-card reveal reveal-delay-3">
+                    <div class="timeline-phase-tag">Phase 03 &bull; Traction</div>
+                    <div class="timeline-icon-box"><i class="fas fa-trophy"></i></div>
                     <h3>Key Milestones</h3>
                     <p>
-                        Successfully bootstrapped the flagship student dashboard system, launched placement bootcamps in major institutions, and deployed multiple core apps. We have designed AI-powered placement evaluators, candidate screening systems, and smart scheduling trackers, successfully helping students verify credentials and master programming pipelines.
+                        Successfully bootstrapped the flagship student dashboard system, launched placement bootcamps in major institutions, and deployed multiple core apps. Our AI-powered placement evaluators have guided over 100+ students toward technical mastery.
                     </p>
                 </div>
                 
                 <!-- Journey 4 -->
-                <div class="journey-card">
-                    <div class="journey-badge"><i class="fas fa-bullseye"></i></div>
-                    <h3>Future Goals</h3>
+                <div class="timeline-card reveal reveal-delay-4">
+                    <div class="timeline-phase-tag">Phase 04 &bull; Vision</div>
+                    <div class="timeline-icon-box"><i class="fas fa-bullseye"></i></div>
+                    <h3>Nationwide Horizon</h3>
                     <p>
-                        Our mission for the next 12 months is expanding the EETIRP ecosystem with nationwide bootcamps, automated candidate tracking networks, and native AI interview simulators. We are aligning university programs directly with tech recruiters to build a seamless, friction-free gateway for student hiring.
+                        Our mission for the upcoming 12 months is expanding the EETIRP ecosystem with nationwide university bootcamps, automated candidate tracking networks, and native AI interview simulators directly partnering with recruiters.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- EETIRP COMPANY HIGHLIGHT SECTION -->
+    <!-- EETIRP ENTERPRISE SPOTLIGHT SECTION -->
     <section class="section" id="eetirp">
         <div class="container">
-            <div class="section-title">
-                <h2>EETIRP Ecosystem</h2>
-                <p>A separate corporate structure built to revolutionize college tech training</p>
+            <div class="section-header reveal">
+                <span class="section-kicker"><i class="fas fa-building"></i> Venture Spotlight</span>
+                <h2 class="section-title">EETIRP Ecosystem</h2>
+                <p class="section-subtitle">A registered corporate enterprise revolutionizing technical student training &amp; placement readiness</p>
             </div>
             
-            <div class="eetirp-banner">
-                <div class="eetirp-banner-content">
-                    <span class="badge" style="background: rgba(255,255,255,0.1); color: #fff; border-color: rgba(255,255,255,0.2);">Company Profile</span>
-                    <h3>eetirpltd.vercel.app</h3>
-                    <p>
-                        EETIRP PVT LTD is a next-generation technology, innovation, and student AI ecosystem. We operate independently to deliver courses, bootcamps, mock interview portals, and placement assistance pipelines. By linking personal engineering tools directly to company requirements, we create a highly effective gateway for student readiness.
-                    </p>
-                    <a href="https://eetirpltd.vercel.app" target="_blank" class="btn btn-primary" style="background: #ffffff; color: #1e3a8a;"><i class="fas fa-external-link-alt"></i> Visit EETIRP Platform</a>
-                </div>
-                <div class="eetirp-stats-grid">
-                    <div class="eetirp-stat-box">
-                        <div class="eetirp-stat-number">6+</div>
-                        <div class="eetirp-stat-label">Active Apps</div>
+            <div class="enterprise-card reveal">
+                <div class="enterprise-grid">
+                    <div>
+                        <div class="enterprise-meta-row">
+                            <span class="enterprise-badge"><i class="fas fa-shield-alt"></i> Corporate Profile</span>
+                            <span class="badge badge-emerald"><span class="pulse-dot"></span> Ecosystem Active</span>
+                        </div>
+                        <h3 class="enterprise-title">Bridging College Prep &amp; Enterprise Requirements</h3>
+                        <p class="enterprise-desc">
+                            EETIRP PVT LTD is a next-generation technology, innovation, and student AI ecosystem. We operate independently to deliver courses, bootcamps, mock interview portals, and placement assistance pipelines. By linking personal engineering tools directly to company requirements, we create a friction-free gateway for student hiring.
+                        </p>
+                        <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+                            <a href="https://eetirpltd.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-outline-white">
+                                <i class="fas fa-arrow-up-right-from-square"></i> Visit EETIRP Platform
+                            </a>
+                            <a href="#projects" class="btn btn-secondary">
+                                <i class="fas fa-laptop-code"></i> Explore Active Apps
+                            </a>
+                        </div>
                     </div>
-                    <div class="eetirp-stat-box">
-                        <div class="eetirp-stat-number">100+</div>
-                        <div class="eetirp-stat-label">Students Mentored</div>
-                    </div>
-                    <div class="eetirp-stat-box">
-                        <div class="eetirp-stat-number">10+</div>
-                        <div class="eetirp-stat-label">Tech Bootcamps</div>
-                    </div>
-                    <div class="eetirp-stat-box">
-                        <div class="eetirp-stat-number">8.95</div>
-                        <div class="eetirp-stat-label">B.Tech CGPA</div>
+                    <div class="enterprise-stats">
+                        <div class="stat-tile">
+                            <div class="stat-tile-num" data-count="6" data-suffix="+">0+</div>
+                            <div class="stat-tile-label">Live Systems</div>
+                        </div>
+                        <div class="stat-tile">
+                            <div class="stat-tile-num" data-count="100" data-suffix="+">0+</div>
+                            <div class="stat-tile-label">Engineers Mentored</div>
+                        </div>
+                        <div class="stat-tile">
+                            <div class="stat-tile-num" data-count="10" data-suffix="+">0+</div>
+                            <div class="stat-tile-label">Tech Bootcamps</div>
+                        </div>
+                        <div class="stat-tile">
+                            <div class="stat-tile-num" data-count="8.95" data-decimals="2">0.00</div>
+                            <div class="stat-tile-label">B.Tech CGPA</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -246,23 +391,25 @@
     </section>
 
     <!-- PROJECTS SECTION -->
-    <section class="section" id="projects" style="background: rgba(15, 23, 42, 0.015); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+    <section class="section section-alt" id="projects">
         <div class="container">
-            <div class="section-title">
-                <h2>Featured Projects</h2>
-                <p>Full-stack applications, AI assessment engines, and digital utilities</p>
+            <div class="section-header reveal">
+                <span class="section-kicker"><i class="fas fa-code-branch"></i> Engineering</span>
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">Production-ready AI assessment engines, centralized student dashboards, and cloud utilities</p>
             </div>
             
             <div class="projects-grid">
                 <!-- Project 1 -->
-                <div class="project-card">
+                <div class="project-card reveal reveal-delay-1">
                     <div>
-                        <div class="project-card-header">
-                            <h3>Placement AI</h3>
-                            <span class="badge">AI Career Platform</span>
+                        <div class="project-top-meta">
+                            <span class="project-category">AI Career Platform</span>
+                            <span class="project-live-indicator"><span class="pulse-dot"></span> Live</span>
                         </div>
+                        <h3>Placement AI</h3>
                         <p class="project-card-desc">
-                            Smart web-sourced infrastructure enabling adaptive mock interviews, resume scanning, and automated career prep feedback logs.
+                            Smart web infrastructure enabling adaptive mock interviews, resume scanning, and automated career prep feedback logs for student cohorts.
                         </p>
                         <div class="project-tech-tags">
                             <span class="tech-tag">Antigravity</span>
@@ -272,20 +419,23 @@
                         </div>
                     </div>
                     <div class="project-card-footer">
-                        <span class="project-status"><i class="fas fa-circle"></i> Live Platform</span>
-                        <a href="https://placementai.kaurahub.com/" target="_blank" class="project-link-btn">Launch App <i class="fas fa-chevron-right"></i></a>
+                        <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 500;">kaurahub.com</span>
+                        <a href="https://placementai.kaurahub.com/" target="_blank" rel="noopener noreferrer" class="project-btn-launch">
+                            Launch App <i class="fas fa-chevron-right"></i>
+                        </a>
                     </div>
                 </div>
                 
                 <!-- Project 2 -->
-                <div class="project-card">
+                <div class="project-card reveal reveal-delay-2">
                     <div>
-                        <div class="project-card-header">
-                            <h3>KAURA Platform</h3>
-                            <span class="badge">Student Ecosystem</span>
+                        <div class="project-top-meta">
+                            <span class="project-category">Student Ecosystem</span>
+                            <span class="project-live-indicator"><span class="pulse-dot"></span> Live</span>
                         </div>
+                        <h3>KAURA Platform</h3>
                         <p class="project-card-desc">
-                            Flagship student digital dashboard connecting academic resources, digital identities, custom schedules, and information grids.
+                            Flagship student digital dashboard connecting academic resources, digital profiles, custom schedules, and information grids.
                         </p>
                         <div class="project-tech-tags">
                             <span class="tech-tag">Full Stack</span>
@@ -295,42 +445,48 @@
                         </div>
                     </div>
                     <div class="project-card-footer">
-                        <span class="project-status"><i class="fas fa-circle"></i> Live Platform</span>
-                        <a href="https://www.kaurahub.com/" target="_blank" class="project-link-btn">Visit Site <i class="fas fa-chevron-right"></i></a>
+                        <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 500;">kaurahub.com</span>
+                        <a href="https://www.kaurahub.com/" target="_blank" rel="noopener noreferrer" class="project-btn-launch">
+                            Visit Site <i class="fas fa-chevron-right"></i>
+                        </a>
                     </div>
                 </div>
 
                 <!-- Project 3 -->
-                <div class="project-card">
+                <div class="project-card reveal reveal-delay-3">
                     <div>
-                        <div class="project-card-header">
-                            <h3>Interview Room</h3>
-                            <span class="badge">AI Assessment</span>
+                        <div class="project-top-meta">
+                            <span class="project-category">AI Assessment</span>
+                            <span class="project-live-indicator"><span class="pulse-dot"></span> Live</span>
                         </div>
+                        <h3>Interview Room</h3>
                         <p class="project-card-desc">
-                            Simulated technical and behavioral interviews with semantic analysis and automated feedback tools.
+                            Simulated technical and behavioral interview platform featuring semantic audio/text analysis and automated feedback generation.
                         </p>
                         <div class="project-tech-tags">
-                            <span class="tech-tag">AI Voice & Text</span>
+                            <span class="tech-tag">AI Voice &amp; Text</span>
                             <span class="tech-tag">Semantic Analysis</span>
                             <span class="tech-tag">Mock Assessment</span>
                         </div>
                     </div>
                     <div class="project-card-footer">
-                        <span class="project-status"><i class="fas fa-circle"></i> Live Platform</span>
-                        <a href="https://interview.kaurahub.com" target="_blank" class="project-link-btn">Launch <i class="fas fa-chevron-right"></i></a>
+                        <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 500;">kaurahub.com</span>
+                        <a href="https://interview.kaurahub.com" target="_blank" rel="noopener noreferrer" class="project-btn-launch">
+                            Launch <i class="fas fa-chevron-right"></i>
+                        </a>
                     </div>
                 </div>
 
                 <!-- Project 4 -->
-                <div class="project-card">
+                <div class="project-card reveal reveal-delay-1">
                     <div>
-                        <div class="project-card-header">
-                            <h3>Result Management</h3>
-                            <span class="badge">Academic Database</span>
+                        <div class="project-top-meta">
+                            <span class="project-category">Academic Database</span>
+                            <span class="project-live-indicator"><span class="pulse-dot"></span> Live</span>
                         </div>
+                        <h3>Result Management</h3>
                         <p class="project-card-desc">
-                            Secure grade and student query index system built for B.Tech course evaluation pipelines.
+                            High-speed grade and student record query system engineered for B.Tech course evaluation and departmental pipelines.
                         </p>
                         <div class="project-tech-tags">
                             <span class="tech-tag">Vercel Deploy</span>
@@ -339,42 +495,48 @@
                         </div>
                     </div>
                     <div class="project-card-footer">
-                        <span class="project-status"><i class="fas fa-circle"></i> Live System</span>
-                        <a href="http://result-liard.vercel.app/" target="_blank" class="project-link-btn">Launch <i class="fas fa-chevron-right"></i></a>
+                        <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 500;">vercel.app</span>
+                        <a href="http://result-liard.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-btn-launch">
+                            Launch <i class="fas fa-chevron-right"></i>
+                        </a>
                     </div>
                 </div>
 
                 <!-- Project 5 -->
-                <div class="project-card">
+                <div class="project-card reveal reveal-delay-2">
                     <div>
-                        <div class="project-card-header">
-                            <h3>Event Hub</h3>
-                            <span class="badge">Social Events</span>
+                        <div class="project-top-meta">
+                            <span class="project-category">Social Ecosystem</span>
+                            <span class="project-live-indicator"><span class="pulse-dot"></span> Live</span>
                         </div>
+                        <h3>Event Hub</h3>
                         <p class="project-card-desc">
-                            Decentralized scheduling, invitation grids, and guest monitoring designed for local community systems.
+                            Decentralized scheduling, invitation grids, and guest monitoring designed for university community workshops and hackathons.
                         </p>
                         <div class="project-tech-tags">
                             <span class="tech-tag">EETIRP Social</span>
                             <span class="tech-tag">Scheduler</span>
-                            <span class="tech-tag">Vercel</span>
+                            <span class="tech-tag">Cloud Database</span>
                         </div>
                     </div>
                     <div class="project-card-footer">
-                        <span class="project-status"><i class="fas fa-circle"></i> Live Hub</span>
-                        <a href="https://social-eetirp.vercel.app" target="_blank" class="project-link-btn">Visit Hub <i class="fas fa-chevron-right"></i></a>
+                        <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 500;">vercel.app</span>
+                        <a href="https://social-eetirp.vercel.app" target="_blank" rel="noopener noreferrer" class="project-btn-launch">
+                            Visit Hub <i class="fas fa-chevron-right"></i>
+                        </a>
                     </div>
                 </div>
 
                 <!-- Project 6 -->
-                <div class="project-card">
+                <div class="project-card reveal reveal-delay-3">
                     <div>
-                        <div class="project-card-header">
-                            <h3>Resume Builder</h3>
-                            <span class="badge">AI Generator</span>
+                        <div class="project-top-meta">
+                            <span class="project-category">AI Generator</span>
+                            <span class="project-live-indicator"><span class="pulse-dot"></span> Live</span>
                         </div>
+                        <h3>Resume Builder</h3>
                         <p class="project-card-desc">
-                            Automated CV creation tool optimizing professional layouts matching industry ATS scanning filters.
+                            Automated CV creation tool synthesizing role-specific bullet points optimized for modern corporate ATS scanning filters.
                         </p>
                         <div class="project-tech-tags">
                             <span class="tech-tag">Next.js</span>
@@ -383,8 +545,10 @@
                         </div>
                     </div>
                     <div class="project-card-footer">
-                        <span class="project-status"><i class="fas fa-circle"></i> Live Tool</span>
-                        <a href="https://airesume.kaurahub.com" target="_blank" class="project-link-btn">Build Resume <i class="fas fa-chevron-right"></i></a>
+                        <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 500;">kaurahub.com</span>
+                        <a href="https://airesume.kaurahub.com" target="_blank" rel="noopener noreferrer" class="project-btn-launch">
+                            Build Resume <i class="fas fa-chevron-right"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -394,66 +558,78 @@
     <!-- CERTIFICATIONS SECTION -->
     <section class="section" id="certifications">
         <div class="container">
-            <div class="section-title">
-                <h2>Certifications</h2>
-                <p>Validated credentials and professional training accomplishments</p>
+            <div class="section-header reveal">
+                <span class="section-kicker"><i class="fas fa-certificate"></i> Validation</span>
+                <h2 class="section-title">Certifications</h2>
+                <p class="section-subtitle">Verified professional credentials across software engineering, business modeling, and applied AI</p>
             </div>
             
             <div class="certs-grid">
-                <div class="cert-card">
+                <div class="cert-card reveal reveal-delay-1">
                     <div class="cert-icon"><i class="fab fa-python"></i></div>
                     <div class="cert-info">
                         <h4>Python Programming Specialist</h4>
-                        <p>Core syntax, OOP paradigms & script automation</p>
+                        <p>Core syntax, OOP paradigms, asynchronous execution &amp; script automation pipelines</p>
                     </div>
                 </div>
                 
-                <div class="cert-card">
+                <div class="cert-card reveal reveal-delay-2">
                     <div class="cert-icon"><i class="far fa-file-excel"></i></div>
                     <div class="cert-info">
                         <h4>Microsoft Office Specialist</h4>
-                        <p>Advanced Excel & Word modeling pipelines</p>
+                        <p>Advanced data analysis, executive reporting, and computational spreadsheet modeling</p>
                     </div>
                 </div>
 
-                <div class="cert-card">
+                <div class="cert-card reveal reveal-delay-3">
                     <div class="cert-icon"><i class="fas fa-robot"></i></div>
                     <div class="cert-info">
                         <h4>Digital Productivity with AI</h4>
-                        <p>Prompt engineering & AI model integration</p>
+                        <p>Prompt engineering frameworks, AI API workflows &amp; enterprise model integrations</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-
     <!-- CONNECT SECTION -->
-    <section class="section" id="contact">
+    <section class="section section-alt" id="contact">
         <div class="container">
-            <div class="section-title">
-                <h2>Connect Array</h2>
-                <p>Initiate direct communications, check credentials, or connect with Karthik</p>
+            <div class="section-header reveal">
+                <span class="section-kicker"><i class="fas fa-paper-plane"></i> Direct Comms</span>
+                <h2 class="section-title">Initiate Contact</h2>
+                <p class="section-subtitle">Open for venture collaborations, institutional training partnerships, and technical discussions</p>
             </div>
             
-            <div class="connect-grid">
-                <a href="mailto:Achark659@gmail.com" class="connect-card">
-                    <div class="connect-icon"><i class="fas fa-envelope"></i></div>
-                    <h4>Email Communications</h4>
-                    <p>Achark659@gmail.com</p>
-                </a>
-                
-                <a href="tel:+917411490271" class="connect-card">
-                    <div class="connect-icon"><i class="fas fa-phone"></i></div>
-                    <h4>Mobile Node</h4>
-                    <p>+91 7411490271</p>
-                </a>
-                
-                <a href="https://linkedin.com/in/karthik-achar-87358930" target="_blank" class="connect-card">
-                    <div class="connect-icon"><i class="fab fa-linkedin"></i></div>
-                    <h4>LinkedIn Network</h4>
-                    <p>karthik-achar-87358930</p>
-                </a>
+            <div class="connect-container">
+                <div class="connect-grid">
+                    <div class="connect-card reveal reveal-delay-1">
+                        <div class="connect-icon"><i class="fas fa-envelope"></i></div>
+                        <h4>Email Communications</h4>
+                        <p>Achark659@gmail.com</p>
+                        <button class="btn btn-secondary contact-copy-pill" data-copy="Achark659@gmail.com">
+                            <i class="far fa-copy"></i> Copy Email
+                        </button>
+                    </div>
+                    
+                    <div class="connect-card reveal reveal-delay-2">
+                        <div class="connect-icon"><i class="fas fa-phone"></i></div>
+                        <h4>Direct Telephone</h4>
+                        <p>+91 7411490271</p>
+                        <button class="btn btn-secondary contact-copy-pill" data-copy="+917411490271">
+                            <i class="far fa-copy"></i> Copy Phone
+                        </button>
+                    </div>
+                    
+                    <div class="connect-card reveal reveal-delay-3">
+                        <div class="connect-icon"><i class="fab fa-linkedin-in"></i></div>
+                        <h4>LinkedIn Network</h4>
+                        <p>karthik-achar-87358930</p>
+                        <a href="https://linkedin.com/in/karthik-achar-87358930" target="_blank" rel="noopener noreferrer" class="connect-link-btn">
+                            View Profile <i class="fas fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -461,35 +637,236 @@
     <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 Karthik C M. All Rights Reserved.</p>
+            <div class="footer-content">
+                <p>&copy; 2026 Karthik C M. All rights reserved. Co-Founder &amp; Director, EETIRP PVT LTD.</p>
+                <a href="#home" class="footer-back-to-top" id="back-to-top">
+                    Back to Top <i class="fas fa-arrow-up"></i>
+                </a>
+            </div>
         </div>
     </footer>
 
-    <!-- INTERACTIVE JAVASCRIPT -->
+    <!-- INTERACTIVE TOAST NOTIFICATION -->
+    <div class="toast" id="toast" role="status" aria-live="polite">
+        <i class="fas fa-circle-check" style="color: var(--accent-emerald-light);"></i>
+        <span id="toast-message">Copied to clipboard!</span>
+    </div>
+
+    <!-- CLIENT INTERACTIVITY & ANIMATION SCRIPT -->
     <script>
-        // Header scroll background effect
+        // 1. Reading Scroll Progress Bar
+        const scrollProgress = document.getElementById('scroll-progress');
+        const updateProgressBar = () => {
+            if (!scrollProgress) return;
+            const scrollTotal = document.documentElement.scrollHeight - window.innerHeight;
+            if (scrollTotal <= 0) return;
+            const scrollCurrent = window.pageYOffset || document.documentElement.scrollTop;
+            const progress = (scrollCurrent / scrollTotal) * 100;
+            scrollProgress.style.width = `${Math.min(100, Math.max(0, progress))}%`;
+        };
+        window.addEventListener('scroll', updateProgressBar, { passive: true });
+
+        // 2. Header scroll elevation effect
         const header = document.getElementById('header');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
+            if (window.scrollY > 40) {
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
             }
-        });
+        }, { passive: true });
 
-        // Mobile drawer toggle
+        // 3. Mobile drawer toggle & outside click handling
         const menuToggle = document.getElementById('menu-toggle');
         const mobileDrawer = document.getElementById('mobile-drawer');
         const mobileLinks = document.querySelectorAll('.mobile-link');
 
         if (menuToggle && mobileDrawer) {
-            menuToggle.addEventListener('click', () => {
+            menuToggle.addEventListener('click', (e) => {
+                e.stopPropagation();
                 mobileDrawer.classList.toggle('open');
             });
 
             mobileLinks.forEach(link => {
                 link.addEventListener('click', () => {
                     mobileDrawer.classList.remove('open');
+                });
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!mobileDrawer.contains(e.target) && !menuToggle.contains(e.target)) {
+                    mobileDrawer.classList.remove('open');
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    mobileDrawer.classList.remove('open');
+                }
+            });
+        }
+
+        // 4. Dynamic Active Navigation Scroll Spy
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        const updateActiveNavLink = () => {
+            const scrollY = window.pageYOffset;
+
+            sections.forEach(current => {
+                const sectionHeight = current.offsetHeight;
+                const sectionTop = current.offsetTop - 130;
+                const sectionId = current.getAttribute('id');
+
+                if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        };
+
+        window.addEventListener('scroll', updateActiveNavLink, { passive: true });
+
+        // 5. Scroll Reveal IntersectionObserver
+        const revealElements = document.querySelectorAll('.reveal');
+        if ('IntersectionObserver' in window) {
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.12,
+                rootMargin: '0px 0px -40px 0px'
+            });
+
+            revealElements.forEach(el => revealObserver.observe(el));
+        } else {
+            // Fallback for older browsers
+            revealElements.forEach(el => el.classList.add('revealed'));
+        }
+
+        // 6. Smooth Animated Stat Counters
+        const counterElements = document.querySelectorAll('[data-count]');
+        const animateCounter = (el) => {
+            const target = parseFloat(el.getAttribute('data-count'));
+            const suffix = el.getAttribute('data-suffix') || '';
+            const decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
+            const duration = 1600; // ms
+            const startTime = performance.now();
+
+            const updateCount = (currentTime) => {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                // Ease-out cubic formula
+                const easeOut = 1 - Math.pow(1 - progress, 3);
+                const currentVal = target * easeOut;
+
+                el.textContent = currentVal.toFixed(decimals) + suffix;
+
+                if (progress < 1) {
+                    requestAnimationFrame(updateCount);
+                } else {
+                    el.textContent = target.toFixed(decimals) + suffix;
+                }
+            };
+
+            requestAnimationFrame(updateCount);
+        };
+
+        if ('IntersectionObserver' in window) {
+            const counterObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounter(entry.target);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.4
+            });
+
+            counterElements.forEach(el => counterObserver.observe(el));
+        } else {
+            counterElements.forEach(el => {
+                const target = parseFloat(el.getAttribute('data-count'));
+                const suffix = el.getAttribute('data-suffix') || '';
+                const decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
+                el.textContent = target.toFixed(decimals) + suffix;
+            });
+        }
+
+        // 7. Interactive Mouse Spotlight Tracking on Cards
+        const interactiveCards = document.querySelectorAll('.bento-card, .project-card, .timeline-card, .cert-card, .connect-card');
+        interactiveCards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            }, { passive: true });
+        });
+
+        // 8. Interactive Copy-to-Clipboard with Toast Feedback
+        const toast = document.getElementById('toast');
+        const toastMessage = document.getElementById('toast-message');
+        let toastTimeout = null;
+
+        const showToast = (message) => {
+            if (!toast) return;
+            toastMessage.textContent = message;
+            toast.classList.add('show');
+
+            if (toastTimeout) clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => {
+                toast.classList.remove('show');
+            }, 2500);
+        };
+
+        const copyButtons = document.querySelectorAll('[data-copy]');
+        copyButtons.forEach(button => {
+            button.addEventListener('click', async (e) => {
+                e.preventDefault();
+                const textToCopy = button.getAttribute('data-copy');
+                if (!textToCopy) return;
+
+                try {
+                    if (navigator.clipboard && window.isSecureContext) {
+                        await navigator.clipboard.writeText(textToCopy);
+                    } else {
+                        // Fallback for non-https or older browsers
+                        const textarea = document.createElement('textarea');
+                        textarea.value = textToCopy;
+                        textarea.style.position = 'fixed';
+                        textarea.style.opacity = '0';
+                        document.body.appendChild(textarea);
+                        textarea.focus();
+                        textarea.select();
+                        document.execCommand('copy');
+                        document.body.removeChild(textarea);
+                    }
+                    showToast(`Copied ${textToCopy} to clipboard!`);
+                } catch (err) {
+                    showToast('Failed to copy to clipboard');
+                }
+            });
+        });
+
+        // 9. Back-to-Top smooth scrolling
+        const backToTopBtn = document.getElementById('back-to-top');
+        if (backToTopBtn) {
+            backToTopBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
                 });
             });
         }
